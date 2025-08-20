@@ -22,6 +22,12 @@ mv egoexo4d.json data/egoexo4d.json
 mv test_dataset.json data/test_dataset.json
 ```
 
+## Login Huggingface
+
+```bash
+huggingface-cli login
+```
+
 ## Run Tool
 
 ```bash
