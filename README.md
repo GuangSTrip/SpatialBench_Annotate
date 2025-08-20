@@ -36,30 +36,6 @@ python app.py
 
 访问: http://localhost:5001
 
-## Quick Start
-
-```bash
-# 1. 克隆项目
-git clone <your-repository-url>
-cd Bench_Annotation_Tool
-
-# 2. 创建环境
-mamba create -n benchannot python=3.12
-mamba activate benchannot
-
-# 3. 安装依赖
-pip install -r requirements.txt
-
-# 4. 准备数据集
-# 将数据集JSON文件放入 data/ 目录
-# 例如: data/your_dataset.json
-
-# 5. 运行工具
-python app.py
-```
-
-访问: http://localhost:5001
-
 ## Project Structure
 
 ```
