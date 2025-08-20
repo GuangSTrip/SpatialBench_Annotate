@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>路径调试测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .debug-info { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .video-container { margin: 20px 0; border: 1px solid #ccc; padding: 20px; }
+        video { width: 100%; max-width: 600px; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔍 YouTube视频路径调试测试</h1>
+    
+    <div class="debug-info">
+        <h3>测试路径构造</h3>
+        <p>当前测试路径: <code id="testPath"></code></p>
+        <button onclick="testPath()">测试路径</button>
+        <div id="pathResult"></div>
+    </div>
+    
+    <div class="video-container">
+        <h3>视频播放测试</h3>
+        <video id="testVideo" controls preload="metadata">
+            <source id="videoSource" src="" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+        <div id="videoStatus"></div>
+    </div>
+    
+    <script>
+        // 模拟主应用的路径构造逻辑
+        function constructYouTubePath(datasetId, sampleId) {
+            return `/static/videos/${datasetId}/${sampleId}/${sampleId}_youtube.mp4`;
+        }
+        
+        // 测试不同的路径组合
+        function testPath() {
+            const testCases = [
+                { datasetId: 'test_dataset', sampleId: 'test_youtube' },
+                { datasetId: 'unknown', sampleId: 'test_youtube' },
+                { datasetId: 'test_dataset', sampleId: 'unknown' }
+            ];
+            
+            const resultDiv = document.getElementById('pathResult');
+            resultDiv.innerHTML = '<h4>路径测试结果:</h4>';
+            
+            testCases.forEach((testCase, index) => {
+                const path = constructYouTubePath(testCase.datasetId, testCase.sampleId);
+                const status = testCase.datasetId === 'test_dataset' && testCase.sampleId === 'test_youtube' ? '✅ 正确' : '❌ 错误';
+                
+                resultDiv.innerHTML += `
+                    <div style="margin: 10px 0; padding: 10px; background: ${status.includes('✅') ? '#d4edda' : '#f8d7da'}; border-radius: 4px;">
+                        <strong>测试 ${index + 1}:</strong> ${status}<br>
+                        <code>datasetId: "${testCase.datasetId}", sampleId: "${testCase.sampleId}"</code><br>
+                        <code>构造路径: "${path}"</code>
+                    </div>
+                `;
+            });
+            
+            // 使用正确的路径测试视频播放
+            const correctPath = constructYouTubePath('test_dataset', 'test_youtube');
+            document.getElementById('testPath').textContent = correctPath;
+            
+            const video = document.getElementById('testVideo');
+            const source = document.getElementById('videoSource');
+            source.src = correctPath;
+            video.load();
+            
+            // 监听视频事件
+            video.addEventListener('loadstart', () => {
+                document.getElementById('videoStatus').innerHTML = '<div style="color: blue;">🔄 视频开始加载</div>';
+            });
+            
+            video.addEventListener('loadedmetadata', () => {
+                document.getElementById('videoStatus').innerHTML = '<div style="color: green;">📊 视频元数据已加载</div>';
+            });
+            
+            video.addEventListener('canplay', () => {
+                document.getElementById('videoStatus').innerHTML = '<div style="color: green;">✅ 视频可以播放</div>';
+            });
+            
+            video.addEventListener('error', (e) => {
+                const error = video.error;
+                let errorMessage = '未知错误';
+                if (error) {
+                    switch(error.code) {
+                        case 1: errorMessage = '视频加载被中断'; break;
+                        case 2: errorMessage = '网络错误'; break;
+                        case 3: errorMessage = '视频解码失败'; break;
+                        case 4: errorMessage = '视频格式不支持'; break;
+                    }
+                }
+                document.getElementById('videoStatus').innerHTML = `<div style="color: red;">❌ ${errorMessage} (代码: ${error?.code || 'N/A'})</div>`;
+            });
+        }
+        
+        // 页面加载时自动测试
+        window.addEventListener('load', testPath);
+    </script>
+</body>
+</html>

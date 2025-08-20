@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .video-player {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 视频播放功能测试</h1>
+    
+    <div class="test-section">
+        <h2>1. 直接视频播放测试</h2>
+        <p>测试浏览器是否能直接播放视频文件：</p>
+        <video class="video-player" controls>
+            <source src="/static/videos/sample1.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+        <div id="directVideoStatus" class="status info">
+            状态：正在检查视频播放...
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. JavaScript动态创建视频播放器</h2>
+        <p>测试JavaScript动态创建视频播放器：</p>
+        <div id="dynamicVideoContainer"></div>
+        <button onclick="createDynamicVideo()">创建动态视频播放器</button>
+        <div id="dynamicVideoStatus" class="status info">
+            状态：等待创建...
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. API数据测试</h2>
+        <p>测试API返回的数据：</p>
+        <button onclick="testAPI()">测试API</button>
+        <div id="apiStatus" class="status info">
+            状态：等待测试...
+        </div>
+        <pre id="apiResult" style="background: #f8f9fa; padding: 10px; border-radius: 4px; display: none;"></pre>
+    </div>
+
+    <div class="test-section">
+        <h2>4. 视频文件访问测试</h2>
+        <p>测试视频文件是否能正常访问：</p>
+        <button onclick="testVideoAccess()">测试视频访问</button>
+        <div id="videoAccessStatus" class="status info">
+            状态：等待测试...
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>5. 浏览器信息</h2>
+        <div id="browserInfo" class="status info">
+            正在获取浏览器信息...
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后执行测试
+        document.addEventListener('DOMContentLoaded', function() {
+            // 测试1：直接视频播放
+            testDirectVideo();
+            
+            // 测试5：浏览器信息
+            showBrowserInfo();
+        });
+
+        function testDirectVideo() {
+            const video = document.querySelector('.video-player');
+            const status = document.getElementById('directVideoStatus');
+            
+            video.addEventListener('loadstart', () => {
+                status.textContent = '状态：开始加载视频...';
+                status.className = 'status info';
+            });
+            
+            video.addEventListener('canplay', () => {
+                status.textContent = '状态：视频可以播放 ✓';
+                status.className = 'status success';
+            });
+            
+            video.addEventListener('error', (e) => {
+                status.textContent = '状态：视频加载失败 ✗';
+                status.className = 'status error';
+                console.error('Video error:', e);
+            });
+            
+            // 5秒后检查视频状态
+            setTimeout(() => {
+                if (video.readyState === 0) {
+                    status.textContent = '状态：视频未加载 ✗';
+                    status.className = 'status error';
+                }
+            }, 5000);
+        }
+
+        function createDynamicVideo() {
+            const container = document.getElementById('dynamicVideoContainer');
+            const status = document.getElementById('dynamicVideoStatus');
+            
+            status.textContent = '状态：正在创建动态视频播放器...';
+            status.className = 'status info';
+            
+            // 清空容器
+            container.innerHTML = '';
+            
+            // 创建新的视频元素
+            const video = document.createElement('video');
+            video.controls = true;
+            video.style.width = '100%';
+            video.style.maxWidth = '600px';
+            
+            const source = document.createElement('source');
+            source.src = '/static/videos/sample1.mp4';
+            source.type = 'video/mp4';
+            
+            video.appendChild(source);
+            video.appendChild(document.createTextNode('您的浏览器不支持视频播放。'));
+            
+            container.appendChild(video);
+            
+            // 绑定事件
+            video.addEventListener('canplay', () => {
+                status.textContent = '状态：动态视频播放器创建成功 ✓';
+                status.className = 'status success';
+            });
+            
+            video.addEventListener('error', (e) => {
+                status.textContent = '状态：动态视频播放器创建失败 ✗';
+                status.className = 'status error';
+                console.error('Dynamic video error:', e);
+            });
+        }
+
+        async function testAPI() {
+            const status = document.getElementById('apiStatus');
+            const result = document.getElementById('apiResult');
+            
+            status.textContent = '状态：正在测试API...';
+            status.className = 'status info';
+            
+            try {
+                const response = await fetch('/api/sample/sample_1/segments');
+                if (response.ok) {
+                    const data = await response.json();
+                    status.textContent = '状态：API测试成功 ✓';
+                    status.className = 'status success';
+                    result.textContent = JSON.stringify(data, null, 2);
+                    result.style.display = 'block';
+                } else {
+                    status.textContent = `状态：API测试失败 ✗ (HTTP ${response.status})`;
+                    status.className = 'status error';
+                }
+            } catch (error) {
+                status.textContent = `状态：API测试异常 ✗ (${error.message})`;
+                status.className = 'status error';
+                console.error('API test error:', error);
+            }
+        }
+
+        async function testVideoAccess() {
+            const status = document.getElementById('videoAccessStatus');
+            
+            status.textContent = '状态：正在测试视频文件访问...';
+            status.className = 'status info';
+            
+            try {
+                const response = await fetch('/static/videos/sample1.mp4', { method: 'HEAD' });
+                if (response.ok) {
+                    const size = response.headers.get('Content-Length');
+                    const type = response.headers.get('Content-Type');
+                    status.textContent = `状态：视频文件访问成功 ✓ (大小: ${size} bytes, 类型: ${type})`;
+                    status.className = 'status success';
+                } else {
+                    status.textContent = `状态：视频文件访问失败 ✗ (HTTP ${response.status})`;
+                    status.className = 'status error';
+                }
+            } catch (error) {
+                status.textContent = `状态：视频文件访问异常 ✗ (${error.message})`;
+                status.className = 'status error';
+                console.error('Video access test error:', error);
+            }
+        }
+
+        function showBrowserInfo() {
+            const info = document.getElementById('browserInfo');
+            const userAgent = navigator.userAgent;
+            const videoSupport = document.createElement('video').canPlayType ? '支持' : '不支持';
+            
+            info.innerHTML = `
+                <strong>浏览器信息：</strong><br>
+                User Agent: ${userAgent}<br>
+                HTML5视频支持: ${videoSupport}<br>
+                Cookie启用: ${navigator.cookieEnabled ? '是' : '否'}<br>
+                在线状态: ${navigator.onLine ? '在线' : '离线'}
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube视频播放测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-container {
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+        .error-info {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success-info {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 YouTube视频播放测试</h1>
+    
+    <div class="video-container">
+        <h3>测试1: 直接使用video.src</h3>
+        <video id="video1" controls preload="metadata">
+            <source src="/static/videos/test_dataset/test_youtube/test_youtube_youtube.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+        <div id="status1"></div>
+    </div>
+    
+    <div class="video-container">
+        <h3>测试2: 使用source元素</h3>
+        <video id="video2" controls preload="metadata">
+            <source src="/static/videos/test_dataset/test_youtube/test_youtube_youtube.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+        <div id="status2"></div>
+    </div>
+    
+    <div class="video-container">
+        <h3>测试3: JavaScript动态创建</h3>
+        <div id="video3-container"></div>
+        <div id="status3"></div>
+    </div>
+    
+    <script>
+        // 测试1: 直接使用video.src
+        const video1 = document.getElementById('video1');
+        const status1 = document.getElementById('status1');
+        
+        video1.addEventListener('loadstart', () => {
+            status1.innerHTML = '<div class="success-info">🔄 视频开始加载</div>';
+        });
+        
+        video1.addEventListener('loadedmetadata', () => {
+            status1.innerHTML = '<div class="success-info">📊 视频元数据已加载</div>';
+        });
+        
+        video1.addEventListener('canplay', () => {
+            status1.innerHTML = '<div class="success-info">✅ 视频可以播放</div>';
+        });
+        
+        video1.addEventListener('error', (e) => {
+            const error = video1.error;
+            let errorMessage = '未知错误';
+            if (error) {
+                switch(error.code) {
+                    case 1: errorMessage = '视频加载被中断'; break;
+                    case 2: errorMessage = '网络错误'; break;
+                    case 3: errorMessage = '视频解码失败'; break;
+                    case 4: errorMessage = '视频格式不支持'; break;
+                }
+            }
+            status1.innerHTML = `<div class="error-info">❌ ${errorMessage} (代码: ${error?.code || 'N/A'})</div>`;
+        });
+        
+        // 测试2: 使用source元素
+        const video2 = document.getElementById('video2');
+        const status2 = document.getElementById('status2');
+        
+        video2.addEventListener('loadstart', () => {
+            status2.innerHTML = '<div class="success-info">🔄 视频开始加载</div>';
+        });
+        
+        video2.addEventListener('loadedmetadata', () => {
+            status2.innerHTML = '<div class="success-info">📊 视频元数据已加载</div>';
+        });
+        
+        video2.addEventListener('canplay', () => {
+            status2.innerHTML = '<div class="success-info">✅ 视频可以播放</div>';
+        });
+        
+        video2.addEventListener('error', (e) => {
+            const error = video2.error;
+            let errorMessage = '未知错误';
+            if (error) {
+                switch(error.code) {
+                    case 1: errorMessage = '视频加载被中断'; break;
+                    case 2: errorMessage = '网络错误'; break;
+                    case 3: errorMessage = '视频解码失败'; break;
+                    case 4: errorMessage = '视频格式不支持'; break;
+                }
+            }
+            status2.innerHTML = `<div class="error-info">❌ ${errorMessage} (代码: ${error?.code || 'N/A'})</div>`;
+        });
+        
+        // 测试3: JavaScript动态创建
+        const container3 = document.getElementById('video3-container');
+        const status3 = document.getElementById('status3');
+        
+        const video3 = document.createElement('video');
+        video3.controls = true;
+        video3.preload = 'metadata';
+        video3.style.width = '100%';
+        video3.style.maxWidth = '600px';
+        video3.style.height = 'auto';
+        
+        const source3 = document.createElement('source');
+        source3.src = '/static/videos/test_dataset/test_youtube/test_youtube_youtube.mp4';
+        source3.type = 'video/mp4';
+        
+        video3.appendChild(source3);
+        video3.appendChild(document.createTextNode('您的浏览器不支持视频播放。'));
+        
+        container3.appendChild(video3);
+        
+        video3.addEventListener('loadstart', () => {
+            status3.innerHTML = '<div class="success-info">🔄 视频开始加载</div>';
+        });
+        
+        video3.addEventListener('loadedmetadata', () => {
+            status3.innerHTML = '<div class="success-info">📊 视频元数据已加载</div>';
+        });
+        
+        video3.addEventListener('canplay', () => {
+            status3.innerHTML = '<div class="success-info">✅ 视频可以播放</div>';
+        });
+        
+        video3.addEventListener('error', (e) => {
+            const error = video3.error;
+            let errorMessage = '未知错误';
+            if (error) {
+                switch(error.code) {
+                    case 1: errorMessage = '视频加载被中断'; break;
+                    case 2: errorMessage = '网络错误'; break;
+                    case 3: errorMessage = '视频解码失败'; break;
+                    case 4: errorMessage = '视频格式不支持'; break;
+                }
+            }
+            status3.innerHTML = `<div class="error-info">❌ ${errorMessage} (代码: ${error?.code || 'N/A'})</div>`;
+        });
+        
+        // 强制加载所有视频
+        video1.load();
+        video2.load();
+        video3.load();
+        
+        console.log('🧪 测试页面已加载，开始测试YouTube视频播放...');
+    </script>
+</body>
+</html>

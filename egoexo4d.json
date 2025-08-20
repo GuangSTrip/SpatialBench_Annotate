@@ -1,0 +1,2036 @@
+{
+  "id": "egoexo4d",
+  "name": "egoexo4d数据集",
+  "description": "多视角视频数据集",
+  "created_at": "2025-08-20T15:23:14.936832",
+  "samples": [
+    {
+      "id": "cmu_bike06_4",
+      "name": "cmu_bike06_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936848",
+      "video_paths": [
+        "/static/videos/egoexo4d/cmu_bike06_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/cmu_bike06_4/cam01.mp4",
+        "/static/videos/egoexo4d/cmu_bike06_4/cam02.mp4",
+        "/static/videos/egoexo4d/cmu_bike06_4/cam03.mp4",
+        "/static/videos/egoexo4d/cmu_bike06_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "cmu_bike10_2",
+      "name": "cmu_bike10_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936854",
+      "video_paths": [
+        "/static/videos/egoexo4d/cmu_bike10_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_2/cam01.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_2/cam02.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_2/cam03.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "cmu_bike09_4",
+      "name": "cmu_bike09_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936857",
+      "video_paths": [
+        "/static/videos/egoexo4d/cmu_bike09_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/cmu_bike09_4/cam01.mp4",
+        "/static/videos/egoexo4d/cmu_bike09_4/cam02.mp4",
+        "/static/videos/egoexo4d/cmu_bike09_4/cam03.mp4",
+        "/static/videos/egoexo4d/cmu_bike09_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "cmu_bike10_3",
+      "name": "cmu_bike10_3",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936860",
+      "video_paths": [
+        "/static/videos/egoexo4d/cmu_bike10_3/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_3/cam01.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_3/cam02.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_3/cam03.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_3/cam04.mp4"
+      ]
+    },
+    {
+      "id": "cmu_bike10_4",
+      "name": "cmu_bike10_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936863",
+      "video_paths": [
+        "/static/videos/egoexo4d/cmu_bike10_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_4/cam01.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_4/cam02.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_4/cam03.mp4",
+        "/static/videos/egoexo4d/cmu_bike10_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "indiana_bike_05_5",
+      "name": "indiana_bike_05_5",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936866",
+      "video_paths": [
+        "/static/videos/egoexo4d/indiana_bike_05_5/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/indiana_bike_05_5/cam01.mp4",
+        "/static/videos/egoexo4d/indiana_bike_05_5/cam02.mp4",
+        "/static/videos/egoexo4d/indiana_bike_05_5/cam03.mp4",
+        "/static/videos/egoexo4d/indiana_bike_05_5/cam04.mp4"
+      ]
+    },
+    {
+      "id": "indiana_bike_15_14",
+      "name": "indiana_bike_15_14",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936868",
+      "video_paths": [
+        "/static/videos/egoexo4d/indiana_bike_15_14/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/indiana_bike_15_14/cam01.mp4",
+        "/static/videos/egoexo4d/indiana_bike_15_14/cam02.mp4",
+        "/static/videos/egoexo4d/indiana_bike_15_14/cam03.mp4",
+        "/static/videos/egoexo4d/indiana_bike_15_14/cam04.mp4"
+      ]
+    },
+    {
+      "id": "indiana_bike_05_4",
+      "name": "indiana_bike_05_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936873",
+      "video_paths": [
+        "/static/videos/egoexo4d/indiana_bike_05_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/indiana_bike_05_4/cam01.mp4",
+        "/static/videos/egoexo4d/indiana_bike_05_4/cam02.mp4",
+        "/static/videos/egoexo4d/indiana_bike_05_4/cam03.mp4",
+        "/static/videos/egoexo4d/indiana_bike_05_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "indiana_bike_14_8",
+      "name": "indiana_bike_14_8",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936875",
+      "video_paths": [
+        "/static/videos/egoexo4d/indiana_bike_14_8/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/indiana_bike_14_8/cam01.mp4",
+        "/static/videos/egoexo4d/indiana_bike_14_8/cam02.mp4",
+        "/static/videos/egoexo4d/indiana_bike_14_8/cam03.mp4",
+        "/static/videos/egoexo4d/indiana_bike_14_8/cam04.mp4"
+      ]
+    },
+    {
+      "id": "indiana_bike_08_2",
+      "name": "indiana_bike_08_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936878",
+      "video_paths": [
+        "/static/videos/egoexo4d/indiana_bike_08_2/aria03_214-1.mp4",
+        "/static/videos/egoexo4d/indiana_bike_08_2/cam01.mp4",
+        "/static/videos/egoexo4d/indiana_bike_08_2/cam02.mp4",
+        "/static/videos/egoexo4d/indiana_bike_08_2/cam03.mp4",
+        "/static/videos/egoexo4d/indiana_bike_08_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_bike_10_2",
+      "name": "georgiatech_bike_10_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936881",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_bike_10_2/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_10_2/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_10_2/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_10_2/cam04.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_10_2/cam05.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_bike_13_11",
+      "name": "georgiatech_bike_13_11",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936883",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_bike_13_11/aria05_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_13_11/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_13_11/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_13_11/cam04.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_13_11/cam05.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_bike_12_8",
+      "name": "georgiatech_bike_12_8",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936886",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_bike_12_8/aria06_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_12_8/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_12_8/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_12_8/cam04.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_12_8/cam05.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_bike_10_6",
+      "name": "georgiatech_bike_10_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936888",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_bike_10_6/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_10_6/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_10_6/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_10_6/cam04.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_10_6/cam05.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_bike_13_9",
+      "name": "georgiatech_bike_13_9",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936891",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_bike_13_9/aria05_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_13_9/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_13_9/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_13_9/cam04.mp4",
+        "/static/videos/egoexo4d/georgiatech_bike_13_9/cam05.mp4"
+      ]
+    },
+    {
+      "id": "iiith_soccer_022_2",
+      "name": "iiith_soccer_022_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936894",
+      "video_paths": [
+        "/static/videos/egoexo4d/iiith_soccer_022_2/aria_214-1.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_022_2/cam01.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_022_2/cam02.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_022_2/cam03.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_022_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "iiith_soccer_043_2",
+      "name": "iiith_soccer_043_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936896",
+      "video_paths": [
+        "/static/videos/egoexo4d/iiith_soccer_043_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_2/cam01.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_2/cam02.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_2/cam03.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_2/cam04.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_2/cam05.mp4"
+      ]
+    },
+    {
+      "id": "iiith_soccer_043_8",
+      "name": "iiith_soccer_043_8",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936899",
+      "video_paths": [
+        "/static/videos/egoexo4d/iiith_soccer_043_8/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_8/cam01.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_8/cam02.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_8/cam03.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_8/cam04.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_043_8/cam05.mp4"
+      ]
+    },
+    {
+      "id": "iiith_soccer_022_3",
+      "name": "iiith_soccer_022_3",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936901",
+      "video_paths": [
+        "/static/videos/egoexo4d/iiith_soccer_022_3/aria_214-1.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_022_3/cam01.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_022_3/cam02.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_022_3/cam03.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_022_3/cam04.mp4"
+      ]
+    },
+    {
+      "id": "iiith_soccer_008_2",
+      "name": "iiith_soccer_008_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936904",
+      "video_paths": [
+        "/static/videos/egoexo4d/iiith_soccer_008_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_008_2/cam01.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_008_2/cam02.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_008_2/cam03.mp4",
+        "/static/videos/egoexo4d/iiith_soccer_008_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_soccer_092223_01_22",
+      "name": "unc_soccer_09-22-23_01_22",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936907",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_soccer_092223_01_22/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_22/cam01.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_22/cam02.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_22/cam03.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_22/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_soccer_092223_01_23",
+      "name": "unc_soccer_09-22-23_01_23",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936909",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_soccer_092223_01_23/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_23/cam01.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_23/cam02.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_23/cam03.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_23/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_soccer_092123_01_28",
+      "name": "unc_soccer_09-21-23_01_28",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936912",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_soccer_092123_01_28/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092123_01_28/cam01.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092123_01_28/cam02.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092123_01_28/cam03.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092123_01_28/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_soccer_092223_01_25",
+      "name": "unc_soccer_09-22-23_01_25",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936915",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_soccer_092223_01_25/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_25/cam01.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_25/cam02.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_25/cam03.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092223_01_25/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_soccer_092123_01_33",
+      "name": "unc_soccer_09-21-23_01_33",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936917",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_soccer_092123_01_33/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092123_01_33/cam01.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092123_01_33/cam02.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092123_01_33/cam03.mp4",
+        "/static/videos/egoexo4d/unc_soccer_092123_01_33/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_soccer_8000_44_45_2",
+      "name": "utokyo_soccer_8000_44_45_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936920",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_soccer_8000_44_45_4",
+      "name": "utokyo_soccer_8000_44_45_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936923",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_4/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_4/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_4/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_44_45_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_soccer_8000_17_6",
+      "name": "utokyo_soccer_8000_17_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936926",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_6/aria1_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_6/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_6/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_6/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_6/cam04.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_6/cam05.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_soccer_8000_17_2",
+      "name": "utokyo_soccer_8000_17_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936929",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_2/aria1_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_2/cam04.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_2/cam05.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_soccer_8000_17_4",
+      "name": "utokyo_soccer_8000_17_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936932",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_4/aria1_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_4/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_4/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_4/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_4/cam04.mp4",
+        "/static/videos/egoexo4d/utokyo_soccer_8000_17_4/cam05.mp4"
+      ]
+    },
+    {
+      "id": "fair_cooking_09_2",
+      "name": "fair_cooking_09_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936934",
+      "video_paths": [
+        "/static/videos/egoexo4d/fair_cooking_09_2/aria09_214-1.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_2/cam01.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_2/cam02.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_2/cam03.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "fair_cooking_09_8",
+      "name": "fair_cooking_09_8",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936938",
+      "video_paths": [
+        "/static/videos/egoexo4d/fair_cooking_09_8/aria09_214-1.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_8/cam01.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_8/cam02.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_8/cam03.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_8/cam04.mp4"
+      ]
+    },
+    {
+      "id": "fair_cooking_09_6",
+      "name": "fair_cooking_09_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936941",
+      "video_paths": [
+        "/static/videos/egoexo4d/fair_cooking_09_6/aria09_214-1.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_6/cam01.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_6/cam02.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_6/cam03.mp4",
+        "/static/videos/egoexo4d/fair_cooking_09_6/cam04.mp4"
+      ]
+    },
+    {
+      "id": "indiana_cooking_19_2",
+      "name": "indiana_cooking_19_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936943",
+      "video_paths": [
+        "/static/videos/egoexo4d/indiana_cooking_19_2/aria04_214-1.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_19_2/cam01.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_19_2/cam02.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_19_2/cam03.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_19_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "indiana_cooking_25_2",
+      "name": "indiana_cooking_25_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936946",
+      "video_paths": [
+        "/static/videos/egoexo4d/indiana_cooking_25_2/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_25_2/cam01.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_25_2/cam02.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_25_2/cam03.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_25_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "indiana_cooking_25_3",
+      "name": "indiana_cooking_25_3",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936949",
+      "video_paths": [
+        "/static/videos/egoexo4d/indiana_cooking_25_3/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_25_3/cam01.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_25_3/cam02.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_25_3/cam03.mp4",
+        "/static/videos/egoexo4d/indiana_cooking_25_3/cam04.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_cooking_03_01_2",
+      "name": "georgiatech_cooking_03_01_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936952",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_cooking_03_01_2/aria06_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_03_01_2/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_03_01_2/cam02.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_03_01_2/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_03_01_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_cooking_12_02_2",
+      "name": "georgiatech_cooking_12_02_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936955",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_cooking_12_02_2/aria04_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_12_02_2/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_12_02_2/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_12_02_2/cam04.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_12_02_2/cam05.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_cooking_03_03_4",
+      "name": "georgiatech_cooking_03_03_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936958",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_cooking_03_03_4/aria05_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_03_03_4/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_03_03_4/cam02.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_03_03_4/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_cooking_03_03_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "iiith_cooking_70_6",
+      "name": "iiith_cooking_70_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936960",
+      "video_paths": [
+        "/static/videos/egoexo4d/iiith_cooking_70_6/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_70_6/cam01.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_70_6/cam02.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_70_6/cam03.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_70_6/cam04.mp4"
+      ]
+    },
+    {
+      "id": "iiith_cooking_129_2",
+      "name": "iiith_cooking_129_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936963",
+      "video_paths": [
+        "/static/videos/egoexo4d/iiith_cooking_129_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_129_2/cam01.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_129_2/cam02.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_129_2/cam03.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_129_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "iiith_cooking_53_2",
+      "name": "iiith_cooking_53_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936965",
+      "video_paths": [
+        "/static/videos/egoexo4d/iiith_cooking_53_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_53_2/cam01.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_53_2/cam02.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_53_2/cam03.mp4",
+        "/static/videos/egoexo4d/iiith_cooking_53_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_cooking_040_2",
+      "name": "minnesota_cooking_040_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936968",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_cooking_040_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_2/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_2/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_2/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_2/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_2/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_cooking_040_4",
+      "name": "minnesota_cooking_040_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936971",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_cooking_040_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_4/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_4/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_4/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_4/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_4/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_cooking_040_6",
+      "name": "minnesota_cooking_040_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936973",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_cooking_040_6/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_6/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_6/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_6/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_6/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_cooking_040_6/cam05.mp4"
+      ]
+    },
+    {
+      "id": "nus_cooking_09_2",
+      "name": "nus_cooking_09_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936976",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cooking_09_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cooking_09_2/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cooking_09_2/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cooking_09_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_cooking_13_2",
+      "name": "nus_cooking_13_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936978",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cooking_13_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cooking_13_2/cam01.mp4",
+        "/static/videos/egoexo4d/nus_cooking_13_2/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cooking_13_2/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cooking_13_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_cooking_13_4",
+      "name": "nus_cooking_13_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936981",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cooking_13_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cooking_13_4/cam01.mp4",
+        "/static/videos/egoexo4d/nus_cooking_13_4/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cooking_13_4/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cooking_13_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0630_Cooking_4_2",
+      "name": "upenn_0630_Cooking_4_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936983",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0630_Cooking_4_2/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0713_Cooking_2_2",
+      "name": "upenn_0713_Cooking_2_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936985",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0713_Cooking_2_2/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0711_Cooking_4_2",
+      "name": "upenn_0711_Cooking_4_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936987",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0711_Cooking_4_2/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_omelet_5_1001_2",
+      "name": "utokyo_omelet_5_1001_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936989",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_omelet_5_1001_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_5_1001_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_5_1001_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_5_1001_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_5_1001_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_omelet_3_1001_2",
+      "name": "utokyo_omelet_3_1001_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936992",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_omelet_3_1001_4",
+      "name": "utokyo_omelet_3_1001_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936995",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_4/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_4/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_4/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_omelet_3_1001_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_salad_10_1018_2",
+      "name": "utokyo_salad_10_1018_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.936997",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_salad_10_1018_4",
+      "name": "utokyo_salad_10_1018_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937000",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_4/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_4/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_4/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_salad_10_1018_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_sushi_10_1008_2",
+      "name": "utokyo_sushi_10_1008_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937002",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_sushi_1_1008_4",
+      "name": "utokyo_sushi_1_1008_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937005",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_sushi_1_1008_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_1_1008_4/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_1_1008_4/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_1_1008_4/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_1_1008_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_sushi_10_1008_4",
+      "name": "utokyo_sushi_10_1008_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937007",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_4/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_4/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_4/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_sushi_10_1008_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_cooking_005_12",
+      "name": "uniandes_cooking_005_12",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937010",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_cooking_005_12/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_005_12/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_005_12/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_005_12/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_005_12/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_cooking_004_2",
+      "name": "uniandes_cooking_004_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937013",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_cooking_004_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_004_2/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_004_2/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_004_2/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_004_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_cooking_003_2",
+      "name": "uniandes_cooking_003_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937015",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_cooking_003_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_003_2/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_003_2/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_003_2/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_cooking_003_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_cooking024_2",
+      "name": "sfu_cooking024_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937017",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_cooking024_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_cooking024_2/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_cooking024_2/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_cooking024_2/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_cooking024_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_cooking027_7",
+      "name": "sfu_cooking027_7",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937020",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_cooking027_7/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_cooking027_7/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_cooking027_7/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_cooking027_7/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_cooking027_7/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_cooking024_6",
+      "name": "sfu_cooking024_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937022",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_cooking024_6/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_cooking024_6/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_cooking024_6/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_cooking024_6/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_cooking024_6/cam04.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_covid_17_7",
+      "name": "georgiatech_covid_17_7",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937025",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_covid_17_7/aria03_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_17_7/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_17_7/cam02.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_17_7/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_17_7/cam04.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_covid_17_9",
+      "name": "georgiatech_covid_17_9",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937027",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_covid_17_9/aria03_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_17_9/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_17_9/cam02.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_17_9/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_17_9/cam04.mp4"
+      ]
+    },
+    {
+      "id": "georgiatech_covid_15_2",
+      "name": "georgiatech_covid_15_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937030",
+      "video_paths": [
+        "/static/videos/egoexo4d/georgiatech_covid_15_2/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_15_2/cam01.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_15_2/cam02.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_15_2/cam03.mp4",
+        "/static/videos/egoexo4d/georgiatech_covid_15_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_covidtest_26_2",
+      "name": "nus_covidtest_26_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937032",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_covidtest_26_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_26_2/cam01.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_26_2/cam02.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_26_2/cam03.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_26_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_covidtest_23_2",
+      "name": "nus_covidtest_23_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937035",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_covidtest_23_2/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_23_2/cam01.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_23_2/cam02.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_23_2/cam03.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_23_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_covidtest_63_1",
+      "name": "nus_covidtest_63_1",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937037",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_covidtest_63_1/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_63_1/cam01.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_63_1/cam02.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_63_1/cam03.mp4",
+        "/static/videos/egoexo4d/nus_covidtest_63_1/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_covid_011_2",
+      "name": "sfu_covid_011_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937040",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_covid_011_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_covid_011_2/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_covid_011_2/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_covid_011_2/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_covid_011_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_covid_008_6",
+      "name": "sfu_covid_008_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937042",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_covid_008_6/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_covid_008_6/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_covid_008_6/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_covid_008_6/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_covid_008_6/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_covid_004_10",
+      "name": "sfu_covid_004_10",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937044",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_covid_004_10/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_covid_004_10/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_covid_004_10/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_covid_004_10/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_covid_004_10/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_pcr_2001_22_2",
+      "name": "utokyo_pcr_2001_22_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937047",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_pcr_2001_22_4",
+      "name": "utokyo_pcr_2001_22_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937049",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_4/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_4/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_4/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_22_4/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_pcr_2001_27_6",
+      "name": "utokyo_pcr_2001_27_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937052",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_pcr_2001_27_6/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_27_6/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_27_6/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_27_6/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_pcr_2001_27_6/cam04.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_043_10",
+      "name": "minnesota_rockclimbing_043_10",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937055",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_10/aria04_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_10/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_10/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_10/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_10/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_10/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_030_6",
+      "name": "minnesota_rockclimbing_030_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937058",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_6/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_6/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_6/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_6/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_6/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_6/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_042_8",
+      "name": "minnesota_rockclimbing_042_8",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937061",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_8/aria03_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_8/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_8/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_8/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_8/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_8/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_021_26",
+      "name": "minnesota_rockclimbing_021_26",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937065",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_26/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_26/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_26/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_26/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_26/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_26/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_042_2",
+      "name": "minnesota_rockclimbing_042_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937068",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_2/aria03_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_2/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_2/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_2/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_2/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_2/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_043_8",
+      "name": "minnesota_rockclimbing_043_8",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937071",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_8/aria04_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_8/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_8/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_8/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_8/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_043_8/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_021_22",
+      "name": "minnesota_rockclimbing_021_22",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937074",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_22/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_22/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_22/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_22/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_22/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_22/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_030_4",
+      "name": "minnesota_rockclimbing_030_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937077",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_4/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_4/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_4/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_4/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_4/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_030_4/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_021_30",
+      "name": "minnesota_rockclimbing_021_30",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937082",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_30/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_30/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_30/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_30/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_30/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_021_30/cam05.mp4"
+      ]
+    },
+    {
+      "id": "minnesota_rockclimbing_042_4",
+      "name": "minnesota_rockclimbing_042_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937085",
+      "video_paths": [
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_4/aria03_214-1.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_4/cam01.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_4/cam02.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_4/cam03.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_4/cam04.mp4",
+        "/static/videos/egoexo4d/minnesota_rockclimbing_042_4/cam05.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_032_5",
+      "name": "uniandes_bouldering_032_5",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937088",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_032_5/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_5/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_5/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_5/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_5/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_026_87",
+      "name": "uniandes_bouldering_026_87",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937091",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_026_87/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_026_87/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_026_87/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_026_87/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_026_87/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_012_47",
+      "name": "uniandes_bouldering_012_47",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937093",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_012_47/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_012_47/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_012_47/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_012_47/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_012_47/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_030_6",
+      "name": "uniandes_bouldering_030_6",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937096",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_030_6/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_6/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_6/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_6/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_6/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_030_73",
+      "name": "uniandes_bouldering_030_73",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937099",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_030_73/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_73/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_73/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_73/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_73/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_032_69",
+      "name": "uniandes_bouldering_032_69",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937101",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_032_69/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_69/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_69/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_69/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_69/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_024_62",
+      "name": "uniandes_bouldering_024_62",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937104",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_024_62/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_024_62/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_024_62/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_024_62/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_024_62/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_030_66",
+      "name": "uniandes_bouldering_030_66",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937107",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_030_66/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_66/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_66/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_66/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_66/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_030_65",
+      "name": "uniandes_bouldering_030_65",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937109",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_030_65/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_65/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_65/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_65/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_030_65/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_bouldering_032_7",
+      "name": "uniandes_bouldering_032_7",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937112",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_bouldering_032_7/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_7/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_7/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_7/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_bouldering_032_7/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_cpr_23_2",
+      "name": "nus_cpr_23_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937114",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cpr_23_2/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cpr_23_2/cam01.mp4",
+        "/static/videos/egoexo4d/nus_cpr_23_2/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cpr_23_2/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cpr_23_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_cpr_33_3",
+      "name": "nus_cpr_33_3",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937117",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cpr_33_3/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cpr_33_3/cam01.mp4",
+        "/static/videos/egoexo4d/nus_cpr_33_3/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cpr_33_3/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cpr_33_3/cam04.mp4",
+        "/static/videos/egoexo4d/nus_cpr_33_3/cam05.mp4"
+      ]
+    },
+    {
+      "id": "nus_cpr_01_1",
+      "name": "nus_cpr_01_1",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937119",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cpr_01_1/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cpr_01_1/cam01.mp4",
+        "/static/videos/egoexo4d/nus_cpr_01_1/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cpr_01_1/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cpr_01_1/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_cpr_06_1",
+      "name": "nus_cpr_06_1",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937121",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cpr_06_1/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cpr_06_1/cam01.mp4",
+        "/static/videos/egoexo4d/nus_cpr_06_1/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cpr_06_1/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cpr_06_1/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_cpr_01_2",
+      "name": "nus_cpr_01_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937124",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cpr_01_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cpr_01_2/cam01.mp4",
+        "/static/videos/egoexo4d/nus_cpr_01_2/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cpr_01_2/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cpr_01_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_cpr_49_1",
+      "name": "nus_cpr_49_1",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937127",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cpr_49_1/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cpr_49_1/cam01.mp4",
+        "/static/videos/egoexo4d/nus_cpr_49_1/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cpr_49_1/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cpr_49_1/cam04.mp4"
+      ]
+    },
+    {
+      "id": "nus_cpr_03_2",
+      "name": "nus_cpr_03_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937129",
+      "video_paths": [
+        "/static/videos/egoexo4d/nus_cpr_03_2/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/nus_cpr_03_2/cam01.mp4",
+        "/static/videos/egoexo4d/nus_cpr_03_2/cam02.mp4",
+        "/static/videos/egoexo4d/nus_cpr_03_2/cam03.mp4",
+        "/static/videos/egoexo4d/nus_cpr_03_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_cpr_2005_22_2",
+      "name": "utokyo_cpr_2005_22_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937131",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_cpr_2005_22_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_22_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_22_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_22_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_22_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_cpr_2005_24_2",
+      "name": "utokyo_cpr_2005_24_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937134",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_cpr_2005_24_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_24_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_24_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_24_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_24_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "utokyo_cpr_2005_27_2",
+      "name": "utokyo_cpr_2005_27_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937136",
+      "video_paths": [
+        "/static/videos/egoexo4d/utokyo_cpr_2005_27_2/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_27_2/cam01.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_27_2/cam02.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_27_2/cam03.mp4",
+        "/static/videos/egoexo4d/utokyo_cpr_2005_27_2/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_basketball_10_11",
+      "name": "sfu_basketball_10_11",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937139",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_basketball_10_11/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_10_11/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_10_11/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_10_11/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_10_11/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_basketball_01_31",
+      "name": "sfu_basketball_01_31",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937143",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_basketball_01_31/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_01_31/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_01_31/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_01_31/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_01_31/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_basketball_04_21",
+      "name": "sfu_basketball_04_21",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937146",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_basketball_04_21/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_04_21/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_04_21/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_04_21/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_04_21/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_basketball_04_25",
+      "name": "sfu_basketball_04_25",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937148",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_basketball_04_25/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_04_25/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_04_25/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_04_25/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_04_25/cam04.mp4"
+      ]
+    },
+    {
+      "id": "sfu_basketball_06_8",
+      "name": "sfu_basketball_06_8",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937150",
+      "video_paths": [
+        "/static/videos/egoexo4d/sfu_basketball_06_8/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_06_8/cam01.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_06_8/cam02.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_06_8/cam03.mp4",
+        "/static/videos/egoexo4d/sfu_basketball_06_8/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_basketball_030923_02_39",
+      "name": "unc_basketball_03-09-23_02_39",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937153",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_basketball_030923_02_39/aria02_214-1.mp4",
+        "/static/videos/egoexo4d/unc_basketball_030923_02_39/cam01.mp4",
+        "/static/videos/egoexo4d/unc_basketball_030923_02_39/cam02.mp4",
+        "/static/videos/egoexo4d/unc_basketball_030923_02_39/cam03.mp4",
+        "/static/videos/egoexo4d/unc_basketball_030923_02_39/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_basketball_031623_01_5",
+      "name": "unc_basketball_03-16-23_01_5",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937156",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_basketball_031623_01_5/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/unc_basketball_031623_01_5/cam01.mp4",
+        "/static/videos/egoexo4d/unc_basketball_031623_01_5/cam02.mp4",
+        "/static/videos/egoexo4d/unc_basketball_031623_01_5/cam03.mp4",
+        "/static/videos/egoexo4d/unc_basketball_031623_01_5/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_basketball_033123_01_37",
+      "name": "unc_basketball_03-31-23_01_37",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937159",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_basketball_033123_01_37/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/unc_basketball_033123_01_37/cam01.mp4",
+        "/static/videos/egoexo4d/unc_basketball_033123_01_37/cam02.mp4",
+        "/static/videos/egoexo4d/unc_basketball_033123_01_37/cam03.mp4",
+        "/static/videos/egoexo4d/unc_basketball_033123_01_37/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_basketball_022423_01_14",
+      "name": "unc_basketball_02-24-23_01_14",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937162",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_basketball_022423_01_14/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/unc_basketball_022423_01_14/cam01.mp4",
+        "/static/videos/egoexo4d/unc_basketball_022423_01_14/cam02.mp4",
+        "/static/videos/egoexo4d/unc_basketball_022423_01_14/cam03.mp4",
+        "/static/videos/egoexo4d/unc_basketball_022423_01_14/cam04.mp4"
+      ]
+    },
+    {
+      "id": "unc_basketball_033123_01_24",
+      "name": "unc_basketball_03-31-23_01_24",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937164",
+      "video_paths": [
+        "/static/videos/egoexo4d/unc_basketball_033123_01_24/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/unc_basketball_033123_01_24/cam01.mp4",
+        "/static/videos/egoexo4d/unc_basketball_033123_01_24/cam02.mp4",
+        "/static/videos/egoexo4d/unc_basketball_033123_01_24/cam03.mp4",
+        "/static/videos/egoexo4d/unc_basketball_033123_01_24/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_basketball_001_16",
+      "name": "uniandes_basketball_001_16",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937167",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_basketball_001_16/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_16/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_16/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_16/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_16/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_basketball_001_18",
+      "name": "uniandes_basketball_001_18",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937170",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_basketball_001_18/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_18/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_18/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_18/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_18/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_basketball_001_40",
+      "name": "uniandes_basketball_001_40",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937172",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_basketball_001_40/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_40/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_40/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_40/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_001_40/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_basketball_003_54",
+      "name": "uniandes_basketball_003_54",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937175",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_basketball_003_54/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_003_54/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_003_54/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_003_54/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_003_54/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_basketball_004_19",
+      "name": "uniandes_basketball_004_19",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937179",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_basketball_004_19/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_004_19/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_004_19/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_004_19/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_basketball_004_19/cam04.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_dance_017_49",
+      "name": "uniandes_dance_017_49",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937181",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_dance_017_49/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_017_49/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_017_49/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_017_49/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_017_49/cam04.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_017_49/cam05.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_dance_015_10",
+      "name": "uniandes_dance_015_10",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937184",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_dance_015_10/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_015_10/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_015_10/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_015_10/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_015_10/cam04.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_015_10/cam05.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_dance_024_33",
+      "name": "uniandes_dance_024_33",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937187",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_dance_024_33/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_33/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_33/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_33/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_33/cam04.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_33/cam05.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_dance_018_13",
+      "name": "uniandes_dance_018_13",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937190",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_dance_018_13/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_018_13/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_018_13/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_018_13/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_018_13/cam04.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_018_13/cam05.mp4"
+      ]
+    },
+    {
+      "id": "uniandes_dance_024_21",
+      "name": "uniandes_dance_024_21",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937192",
+      "video_paths": [
+        "/static/videos/egoexo4d/uniandes_dance_024_21/aria01_214-1.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_21/cam01.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_21/cam02.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_21/cam03.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_21/cam04.mp4",
+        "/static/videos/egoexo4d/uniandes_dance_024_21/cam05.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0730_Partner_Dance_1_2_7",
+      "name": "upenn_0730_Partner_Dance_1_2_7",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937194",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0730_Partner_Dance_1_2_7/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0707_Dance_3_8",
+      "name": "upenn_0707_Dance_3_8",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937196",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0707_Dance_3_8/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0720_Dance_1_3",
+      "name": "upenn_0720_Dance_1_3",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937199",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0720_Dance_1_3/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0707_Dance_3_5",
+      "name": "upenn_0707_Dance_3_5",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937200",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0707_Dance_3_5/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0720_Dance_1_2",
+      "name": "upenn_0720_Dance_1_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937202",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0720_Dance_1_2/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0727_Dance_1_3",
+      "name": "upenn_0727_Dance_1_3",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937204",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0727_Dance_1_3/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0707_Dance_2_5",
+      "name": "upenn_0707_Dance_2_5",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937206",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0707_Dance_2_5/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0707_Dance_1_4",
+      "name": "upenn_0707_Dance_1_4",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937208",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0707_Dance_1_4/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0707_Dance_2_2",
+      "name": "upenn_0707_Dance_2_2",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937210",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0707_Dance_2_2/aria01_214-1.mp4"
+      ]
+    },
+    {
+      "id": "upenn_0707_Dance_1_3",
+      "name": "upenn_0707_Dance_1_3",
+      "type": "multiple_videos",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-20T15:23:14.937211",
+      "video_paths": [
+        "/static/videos/egoexo4d/upenn_0707_Dance_1_3/aria01_214-1.mp4"
+      ]
+    }
+  ],
+  "sample_count": 137,
+  "assigned_sample_count": 137
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单视频测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-container {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .log {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 简单视频播放测试</h1>
+    
+    <div class="test-section">
+        <h3>测试1: 直接HTML视频标签</h3>
+        <div class="video-container">
+            <video controls>
+                <source src="/static/videos/sample1.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h3>测试2: JavaScript动态创建视频</h3>
+        <div id="dynamicVideoContainer" class="video-container">
+            <p>点击按钮创建视频</p>
+        </div>
+        <button onclick="createDynamicVideo()">创建动态视频</button>
+        <button onclick="clearDynamicVideo()">清除视频</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>测试3: 视频信息检查</h3>
+        <button onclick="checkVideoInfo()">检查视频信息</button>
+        <div id="videoInfo"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>测试4: 控制台日志</h3>
+        <div id="logOutput" class="log"></div>
+        <button onclick="clearLog()">清除日志</button>
+    </div>
+    
+    <script>
+        function log(message) {
+            const logOutput = document.getElementById('logOutput');
+            const timestamp = new Date().toLocaleTimeString();
+            logOutput.innerHTML += `[${timestamp}] ${message}\n`;
+            logOutput.scrollTop = logOutput.scrollHeight;
+            console.log(message);
+        }
+        
+        function createDynamicVideo() {
+            log('🎬 开始创建动态视频...');
+            
+            const container = document.getElementById('dynamicVideoContainer');
+            container.innerHTML = '';
+            
+            const video = document.createElement('video');
+            video.controls = true;
+            video.style.width = '100%';
+            video.style.maxWidth = '600px';
+            video.style.height = 'auto';
+            
+            const source = document.createElement('source');
+            source.src = '/static/videos/sample1.mp4';
+            source.type = 'video/mp4';
+            
+            video.appendChild(source);
+            container.appendChild(video);
+            
+            // 绑定事件
+            video.addEventListener('loadstart', () => {
+                log('🔄 动态视频开始加载');
+            });
+            
+            video.addEventListener('canplay', () => {
+                log('✅ 动态视频可以播放');
+                log(`🎥 视频尺寸: ${video.videoWidth} x ${video.videoHeight}`);
+                log(`🎥 视频时长: ${video.duration}`);
+            });
+            
+            video.addEventListener('error', (e) => {
+                log('❌ 动态视频加载错误');
+                log(`错误代码: ${video.error?.code}`);
+                log(`错误消息: ${video.error?.message}`);
+            });
+            
+            // 强制加载
+            video.load();
+            
+            log('✅ 动态视频元素已创建');
+        }
+        
+        function clearDynamicVideo() {
+            const container = document.getElementById('dynamicVideoContainer');
+            container.innerHTML = '<p>点击按钮创建视频</p>';
+            log('🗑️ 动态视频已清除');
+        }
+        
+        function checkVideoInfo() {
+            log('🔍 检查页面中的视频信息...');
+            
+            const videos = document.querySelectorAll('video');
+            log(`找到 ${videos.length} 个视频元素`);
+            
+            videos.forEach((video, index) => {
+                log(`\n视频 ${index + 1}:`);
+                log(`- 当前时间: ${video.currentTime}`);
+                log(`- 时长: ${video.duration}`);
+                log(`- 尺寸: ${video.videoWidth} x ${video.videoHeight}`);
+                log(`- 就绪状态: ${video.readyState}`);
+                log(`- 网络状态: ${video.networkState}`);
+                log(`- 错误: ${video.error ? '有错误' : '无错误'}`);
+                
+                if (video.error) {
+                    log(`- 错误代码: ${video.error.code}`);
+                    log(`- 错误消息: ${video.error.message}`);
+                }
+            });
+        }
+        
+        function clearLog() {
+            document.getElementById('logOutput').innerHTML = '';
+        }
+        
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            log('🚀 页面加载完成');
+            log('📁 视频路径: /static/videos/sample1.mp4');
+            
+            // 检查静态视频元素
+            const staticVideo = document.querySelector('video');
+            if (staticVideo) {
+                log('✅ 找到静态视频元素');
+                
+                staticVideo.addEventListener('loadstart', () => {
+                    log('🔄 静态视频开始加载');
+                });
+                
+                staticVideo.addEventListener('canplay', () => {
+                    log('✅ 静态视频可以播放');
+                });
+                
+                staticVideo.addEventListener('error', (e) => {
+                    log('❌ 静态视频加载错误');
+                });
+            } else {
+                log('❌ 未找到静态视频元素');
+            }
+        });
+    </script>
+</body>
+</html>

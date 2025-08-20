@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Predict Benchmark Annotation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 页眉 -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">
+                <i class="fas fa-video"></i>
+                Spatial Predict Benchmark Annotation
+            </h1>
+            <div class="header-info">
+                <span class="year">2025</span>
+                <span class="producer">Produced by zhaoyanguang</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 标注者选择模态框 -->
+    <div id="annotatorModal" class="modal">
+        <div class="modal-content">
+            <h2>请选择您的身份</h2>
+            <div class="annotator-list">
+                <button class="annotator-btn" data-annotator="annotator_1">
+                    <i class="fas fa-user"></i>
+                    Hu Shutong
+                </button>
+                <button class="annotator-btn" data-annotator="annotator_2">
+                    <i class="fas fa-user"></i>
+                    Wang Yu
+                </button>
+                <button class="annotator-btn" data-annotator="annotator_3">
+                    <i class="fas fa-user"></i>
+                    Xiao Lijun
+                </button>
+                <button class="annotator-btn" data-annotator="annotator_4">
+                    <i class="fas fa-user"></i>
+                    Zhao Yanguang
+                </button>
+                <button class="annotator-btn" data-annotator="unassigned">
+                    <i class="fas fa-user-slash"></i>
+                    未分配
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+        <!-- 左侧：数据集和样本列表 -->
+        <div class="left-panel">
+            <div class="panel-header">
+                <h3>数据集列表</h3>
+                <div class="current-annotator">
+                    <i class="fas fa-user"></i>
+                    <span id="currentAnnotator">未选择</span>
+                </div>
+            </div>
+            
+            <div class="dataset-list" id="datasetList">
+                <!-- 数据集列表将通过JavaScript动态加载 -->
+            </div>
+            
+            <div class="sample-list" id="sampleList">
+                <!-- 样本列表将通过JavaScript动态加载 -->
+            </div>
+        </div>
+
+        <!-- 中间：片段列表 -->
+        <div class="center-panel">
+            <div class="panel-header">
+                <h3>片段列表</h3>
+                <button id="removeRejectedBtn" class="btn btn-danger" style="display: none;">
+                    <i class="fas fa-trash"></i>
+                    删除弃用片段
+                </button>
+            </div>
+            
+            <div class="segment-list" id="segmentList">
+                <!-- 片段列表将通过JavaScript动态加载 -->
+            </div>
+        </div>
+
+        <!-- 右侧：视频播放器 -->
+        <div class="right-panel">
+            <div class="panel-header">
+                <h3>视频播放器</h3>
+            </div>
+            
+            <div class="video-container">
+                <div id="videoPlayer">
+                    <!-- 视频将通过JavaScript动态加载 -->
+                </div>
+                
+                <div class="video-controls">
+                    <div class="time-controls">
+                                        <div class="time-input-group">
+                    <label for="startTimeInput">开始时间:</label>
+                    <input type="text" id="startTimeInput" class="time-input" value="00:00" placeholder="MM:SS">
+                </div>
+                <div class="time-input-group">
+                    <label for="endTimeInput">结束时间:</label>
+                    <input type="text" id="endTimeInput" class="time-input" value="00:00" placeholder="MM:SS">
+                </div>
+                    </div>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-track">
+                                <div class="timeline-progress" id="timelineProgress"></div>
+                                <div class="timeline-selection" id="timelineSelection"></div>
+                                <div class="timeline-marker start-marker" id="startMarker">
+                                    <div class="marker-time" id="startMarkerTime">00:00</div>
+                                </div>
+                                <div class="timeline-marker end-marker" id="endMarker">
+                                    <div class="marker-time" id="endMarkerTime">00:00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-labels">
+                            <span class="start-label">开始</span>
+                            <span class="end-label">结束</span>
+                        </div>
+                    </div>
+                    
+                    <div class="video-action-controls">
+                                            <div class="playback-controls">
+                        <button id="prevSegmentBtn" class="btn btn-outline-primary" onclick="app.selectPreviousSegment()">
+                            <i class="fas fa-step-backward"></i>
+                            上一个片段
+                        </button>
+                        <button id="playSegmentBtn" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            播放片段
+                        </button>
+                        <button id="pauseBtn" class="btn btn-secondary">
+                            <i class="fas fa-pause"></i>
+                            暂停
+                        </button>
+                        <button id="nextSegmentBtn" class="btn btn-outline-primary" onclick="app.selectNextSegment()">
+                            <i class="fas fa-step-forward"></i>
+                            下一个片段
+                        </button>
+                    </div>
+                    
+                    <div class="keyboard-shortcuts">
+                        <small class="text-muted">
+                            <i class="fas fa-keyboard"></i>
+                            快捷键: ← 上一个 | → 下一个 | 空格 播放/暂停当前位置 | 回车 从开始时间播放片段
+                        </small>
+                    </div>
+                        
+                        <div class="segment-status-controls" id="segmentStatusControls" style="display: none;">
+                            <span class="control-label">片段状态:</span>
+                            <button class="btn btn-sm btn-success" onclick="app.updateCurrentSegmentStatus('选用')">
+                                <i class="fas fa-check"></i>
+                                选用
+                            </button>
+                            <button class="btn btn-sm btn-warning" onclick="app.updateCurrentSegmentStatus('待抉择')">
+                                <i class="fas fa-question"></i>
+                                待抉择
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="app.updateCurrentSegmentStatus('弃用')">
+                                <i class="fas fa-times"></i>
+                                弃用
+                            </button>
+                        </div>
+                        
+                                            <div class="segment-action-controls">
+                        <button class="btn btn-sm btn-info" onclick="app.createNewSegment()">
+                            <i class="fas fa-plus"></i>
+                            新增片段
+                        </button>
+                        <button class="btn btn-sm btn-success" onclick="app.batchCreateSegments()">
+                            <i class="fas fa-layer-group"></i>
+                            批量创建片段
+                        </button>
+                        <button class="btn btn-sm btn-primary" id="updateSegmentTimeBtn" onclick="app.updateSegmentTime()" style="display: none;">
+                            <i class="fas fa-clock"></i>
+                            修改片段时间
+                        </button>
+                        <button class="btn btn-sm btn-danger" id="deleteSegmentBtn" onclick="app.deleteCurrentSegment()" style="display: none;">
+                            <i class="fas fa-trash"></i>
+                            删除当前片段
+                        </button>
+                        <button class="btn btn-sm btn-success" id="markVideoReviewedBtn" onclick="app.markVideoAsReviewed()" style="display: none;">
+                            <i class="fas fa-check-double"></i>
+                            标记为已审阅
+                        </button>
+                        <button class="btn btn-sm btn-warning" id="markVideoUnreviewedBtn" onclick="app.markVideoAsUnreviewed()" style="display: none;">
+                            <i class="fas fa-undo"></i>
+                            设置为未审阅
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 加载指示器 -->
+    <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+        <div class="spinner"></div>
+        <span>加载中...</span>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

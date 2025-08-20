@@ -1,0 +1,128 @@
+{
+  "id": "test_dataset",
+  "name": "Test Dataset",
+  "description": "Just for testing",
+  "created_at": "2025-08-19T17:39:54.039939",
+  "samples": [
+    {
+      "id": "test_single",
+      "name": "Test Single Video",
+      "type": "single_video",
+      "video_path": "/static/videos/test_dataset/test_single/video.mp4",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-19T17:39:54.039944"
+    },
+    {
+      "id": "test_multi",
+      "name": "Test Multi Video",
+      "type": "multiple_videos",
+      "video_paths": [
+        "/static/videos/test_dataset/test_multi/video1.mp4",
+        "/static/videos/test_dataset/test_multi/video2.mp4"
+      ],
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-19T17:39:54.039946"
+    },
+    {
+      "id": "test_youtube",
+      "name": "Test YouTube Video",
+      "type": "youtube",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "assigned_to": "annotator_1",
+      "review_status": "已审阅",
+      "created_at": "2025-08-19T17:39:54.039946"
+    },
+    {
+      "id": "test_single",
+      "name": "Test Single Video",
+      "type": "single_video",
+      "video_path": "/static/videos/test_dataset/test_single/video.mp4",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-19T17:39:54.039944"
+    },
+    {
+      "id": "test_multi",
+      "name": "Test Multi Video",
+      "type": "multiple_videos",
+      "video_paths": [
+        "/static/videos/test_dataset/test_multi/video1.mp4",
+        "/static/videos/test_dataset/test_multi/video2.mp4"
+      ],
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-19T17:39:54.039946"
+    },
+    {
+      "id": "test_youtube",
+      "name": "Test YouTube Video",
+      "type": "youtube",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "assigned_to": "annotator_2",
+      "review_status": "已审阅",
+      "created_at": "2025-08-19T17:39:54.039946"
+    },
+    {
+      "id": "test_single",
+      "name": "Test Single Video",
+      "type": "single_video",
+      "video_path": "/static/videos/test_dataset/test_single/video.mp4",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-19T17:39:54.039944"
+    },
+    {
+      "id": "test_multi",
+      "name": "Test Multi Video",
+      "type": "multiple_videos",
+      "video_paths": [
+        "/static/videos/test_dataset/test_multi/video1.mp4",
+        "/static/videos/test_dataset/test_multi/video2.mp4"
+      ],
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-19T17:39:54.039946"
+    },
+    {
+      "id": "test_youtube",
+      "name": "Test YouTube Video",
+      "type": "youtube",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "assigned_to": "annotator_3",
+      "review_status": "已审阅",
+      "created_at": "2025-08-19T17:39:54.039946"
+    },
+    {
+      "id": "test_single",
+      "name": "Test Single Video",
+      "type": "single_video",
+      "video_path": "/static/videos/test_dataset/test_single/video.mp4",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-19T17:39:54.039944"
+    },
+    {
+      "id": "test_multi",
+      "name": "Test Multi Video",
+      "type": "multiple_videos",
+      "video_paths": [
+        "/static/videos/test_dataset/test_multi/video1.mp4",
+        "/static/videos/test_dataset/test_multi/video2.mp4"
+      ],
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-19T17:39:54.039946"
+    },
+    {
+      "id": "test_youtube",
+      "name": "Test YouTube Video",
+      "type": "youtube",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "assigned_to": "annotator_4",
+      "review_status": "已审阅",
+      "created_at": "2025-08-19T17:39:54.039946"
+    }
+  ]
+}
