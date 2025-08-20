@@ -15,6 +15,12 @@ mamba activate benchannot
 ```bash
 pip install -r requirements.txt
 ```
+## Move Dataset JOSN File
+
+```bash
+mv egoexo4d.json data/egoexo4d.json
+mv test_dataset.json data/test_dataset.json
+```
 
 ## Run Tool
 
@@ -60,63 +66,3 @@ Bench_Annotation_Tool/
 ├── convert_dataset.py        # 数据集转换工具
 └── requirements.txt          # 依赖包
 ```
-
-## Dataset Management
-
-### Data Directory Structure
-
-```
-data/
-├── .gitkeep                    # 保持目录结构
-├── your_dataset.json          # 你的数据集文件
-└── your_dataset_segments.json # 对应的片段文件（自动创建）
-```
-
-### Convert EgoExo4D Format
-
-```bash
-python convert_dataset.py egoexo4d.json egoexo4d "EgoExo4D Dataset"
-```
-
-### Add New Dataset
-
-1. 将JSON数据集文件放入 `data/` 目录
-2. 重启应用，系统会自动创建对应的segments文件
-3. 开始标注工作
-
-## Usage
-
-### Annotators
-- annotator_1: Hu Shutong
-- annotator_2: Wang Yu  
-- annotator_3: Xiao Lijun
-- annotator_4: Zhao Yanguang
-
-### Features
-- Video playback and annotation
-- Multi-view video support
-- Segment creation and management
-- Dataset import/export
-
-## Configuration
-
-Default port: 5001 (edit in `app.py` if needed)
-
-## Troubleshooting
-
-- **Port conflict**: Change port in `app.py` or kill existing process
-- **YouTube download fails**: Check network and yt-dlp installation
-- **Dataset not showing**: Verify JSON format and file locations
-- **Video not playing**: Check file paths and browser support
-
-## Development
-
-Debug mode enabled by default. Edit `app.py` for configuration changes.
-
-## Contributing
-
-Issues and PRs welcome!
-
-## License
-
-[Add your license]
