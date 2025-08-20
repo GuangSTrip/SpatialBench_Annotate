@@ -48,3 +48,7 @@ Bench_Annotation_Tool/
 ├── convert_dataset.py        # 数据集转换工具
 └── requirements.txt          # 依赖包
 ```
+
+## 其他
+- 数据集信息以及标注信息存储在data文件夹下
+- 由于数据源为video占用内容，故采取即下即用的方式，视频数据存储在static/videos文件夹下
