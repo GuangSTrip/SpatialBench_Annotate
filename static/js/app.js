@@ -29,6 +29,12 @@ class VideoAnnotationApp {
         this.memoryMonitorInterval = null;
         this.maxBufferSize = 30; // 最大缓冲秒数
         
+        // 注释保存防抖定时器
+        this.commentSaveTimer = null;
+        
+        // 统计相关
+        this.statisticsData = null;
+        
         this.init();
     }
     
@@ -359,12 +365,24 @@ class VideoAnnotationApp {
         // 处理样本名称显示
         const displayName = this.formatSampleName(sample.name);
         
+        // 构建异常状态显示
+        let exceptionHtml = '';
+        if (sample.exception_status && sample.exception_status.is_exception) {
+            exceptionHtml = `
+                <div class="sample-exception-status">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span class="exception-reason">${sample.exception_status.reason || '视频下载失败'}</span>
+                </div>
+            `;
+        }
+        
         div.innerHTML = `
             <div class="sample-name" title="${sample.name}">${displayName}</div>
             <div class="sample-meta">
                 <span class="sample-type ${typeClass}">${this.getSampleTypeText(sample.type)}</span>
                 <span class="review-status ${statusClass}">${sample.review_status}</span>
             </div>
+            ${exceptionHtml}
             <div class="video-download-status" id="download-status-${sample.id}">
                 <span class="status-text">检查中...</span>
                 <button class="btn btn-sm btn-primary download-btn" onclick="app.downloadVideo('${sample.id}')" style="display: none;">
@@ -534,6 +552,9 @@ class VideoAnnotationApp {
                 const result = await response.json();
                 console.log('✅ API响应:', result);
                 this.updateDownloadStatusFromAPI(sample.id, result.video_statuses, sample);
+                
+                // 检查并更新异常状态
+                this.checkAndUpdateExceptionStatus(sample.id);
             } else {
                 console.log('❌ API调用失败:', response.status, response.statusText);
                 this.updateDownloadStatus(sample.id, '检查失败', false);
@@ -542,6 +563,66 @@ class VideoAnnotationApp {
         } catch (error) {
             console.error('检查视频下载状态失败:', error);
             this.updateDownloadStatus(sample.id, '检查失败', false);
+        }
+    }
+    
+    // 检查并更新异常状态
+    async checkAndUpdateExceptionStatus(sampleId) {
+        try {
+            const response = await fetch(`/api/sample/${sampleId}/exception_status`);
+            if (response.ok) {
+                const result = await response.json();
+                const exceptionStatus = result.exception_status;
+                
+                // 更新当前样本的异常状态
+                if (this.currentSample && this.currentSample.id === sampleId) {
+                    this.currentSample.exception_status = exceptionStatus;
+                    // 更新UI显示
+                    this.updateVideoActionButtons();
+                }
+                
+                // 更新样本列表中的异常状态显示
+                this.updateSampleExceptionStatusDisplay(sampleId, exceptionStatus);
+            }
+        } catch (error) {
+            console.error('检查异常状态失败:', error);
+        }
+    }
+    
+    // 更新样本列表中的异常状态显示
+    updateSampleExceptionStatusDisplay(sampleId, exceptionStatus) {
+        const sampleElement = document.querySelector(`[data-sample-id="${sampleId}"]`);
+        if (!sampleElement) return;
+        
+        let exceptionElement = sampleElement.querySelector('.sample-exception-status');
+        
+        if (exceptionStatus && exceptionStatus.is_exception) {
+            // 显示异常状态
+            if (!exceptionElement) {
+                exceptionElement = document.createElement('div');
+                exceptionElement.className = 'sample-exception-status';
+                exceptionElement.innerHTML = `
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span class="exception-reason">${exceptionStatus.reason || '视频下载失败'}</span>
+                `;
+                
+                // 插入到sample-meta之后
+                const sampleMeta = sampleElement.querySelector('.sample-meta');
+                if (sampleMeta) {
+                    sampleMeta.insertAdjacentElement('afterend', exceptionElement);
+                }
+            } else {
+                // 更新现有的异常状态
+                const reasonElement = exceptionElement.querySelector('.exception-reason');
+                if (reasonElement) {
+                    reasonElement.textContent = exceptionStatus.reason || '视频下载失败';
+                }
+            }
+        } else {
+            // 清除异常状态
+            if (exceptionElement) {
+                exceptionElement.remove();
+            }
         }
     }
     
@@ -960,19 +1041,64 @@ class VideoAnnotationApp {
         const statusClass = this.getSegmentStatusClass(segment.status);
         
         div.innerHTML = `
-            <div class="segment-time">
-                ${this.formatTime(segment.start_time)} - ${this.formatTime(segment.end_time)}
-            </div>
-            <div class="segment-status">
-                <span class="segment-status-badge ${statusClass}">${this.getSegmentStatusText(segment.status)}</span>
+            <div class="segment-header">
+                <div class="segment-time">
+                    ${this.formatTime(segment.start_time)} - ${this.formatTime(segment.end_time)}
+                </div>
+                <div class="segment-status">
+                    <span class="segment-status-badge ${statusClass}">${this.getSegmentStatusText(segment.status)}</span>
+                </div>
             </div>
         `;
         
+        // 点击片段项时选中片段
         div.addEventListener('click', () => {
             this.selectSegment(segment);
         });
         
         return div;
+    }
+    
+    // 实时保存片段注释（带防抖）
+    async saveSegmentComment(segmentId, comment) {
+        // 清除之前的定时器
+        if (this.commentSaveTimer) {
+            clearTimeout(this.commentSaveTimer);
+        }
+        
+        // 设置新的定时器，延迟500ms后保存
+        this.commentSaveTimer = setTimeout(async () => {
+            try {
+                const response = await fetch(`/api/segment/${segmentId}/comment`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ comment: comment })
+                });
+                
+                if (response.ok) {
+                    // 更新当前片段列表中的注释
+                    if (this.currentSegmentList) {
+                        const segment = this.currentSegmentList.find(s => s.id === segmentId);
+                        if (segment) {
+                            segment.comment = comment;
+                        }
+                    }
+                    
+                    // 如果当前选中的片段就是这个片段，也更新它
+                    if (this.currentSegment && this.currentSegment.id === segmentId) {
+                        this.currentSegment.comment = comment;
+                    }
+                    
+                    console.log(`✅ 片段 ${segmentId} 注释已保存`);
+                } else {
+                    console.error(`❌ 保存注释失败: ${response.status}`);
+                }
+            } catch (error) {
+                console.error('保存注释时出错:', error);
+            }
+        }, 500); // 500ms防抖延迟
     }
     
     renderSegmentsPagination(totalSegments, totalPages) {
@@ -1114,8 +1240,11 @@ class VideoAnnotationApp {
     updateVideoActionButtons() {
         const markVideoReviewedBtn = document.getElementById('markVideoReviewedBtn');
         const markVideoUnreviewedBtn = document.getElementById('markVideoUnreviewedBtn');
+        const exceptionStatusDisplay = document.getElementById('exceptionStatusDisplay');
+        const exceptionReason = document.getElementById('exceptionReason');
         
         if (this.currentSample) {
+            // 处理审阅状态按钮
             if (this.currentSample.review_status === '已审阅') {
                 // 已审阅时显示"设置为未审阅"按钮
                 if (markVideoReviewedBtn) markVideoReviewedBtn.style.display = 'none';
@@ -1125,10 +1254,27 @@ class VideoAnnotationApp {
                 if (markVideoReviewedBtn) markVideoReviewedBtn.style.display = 'inline-block';
                 if (markVideoUnreviewedBtn) markVideoUnreviewedBtn.style.display = 'none';
             }
+            
+            // 处理异常状态显示
+            if (this.currentSample.exception_status && this.currentSample.exception_status.is_exception) {
+                // 显示异常状态
+                if (exceptionStatusDisplay) {
+                    exceptionStatusDisplay.style.display = 'flex';
+                    if (exceptionReason) {
+                        exceptionReason.textContent = this.currentSample.exception_status.reason || '视频下载失败';
+                    }
+                }
+            } else {
+                // 隐藏异常状态
+                if (exceptionStatusDisplay) {
+                    exceptionStatusDisplay.style.display = 'none';
+                }
+            }
         } else {
-            // 没有选中视频时隐藏所有按钮
+            // 没有选中视频时隐藏所有按钮和状态
             if (markVideoReviewedBtn) markVideoReviewedBtn.style.display = 'none';
             if (markVideoUnreviewedBtn) markVideoUnreviewedBtn.style.display = 'none';
+            if (exceptionStatusDisplay) exceptionStatusDisplay.style.display = 'none';
         }
     }
     
@@ -1655,6 +1801,104 @@ class VideoAnnotationApp {
         }
     }
     
+    // 按预设时间间隔批量创建片段
+    async batchCreateSegmentsWithInterval(intervalSeconds) {
+        if (!this.currentSample) {
+            alert('请先选择一个视频样本');
+            return;
+        }
+        
+        // 获取当前时间轴的时间范围
+        const rangeStartTime = this.parseTimeString(this.startTimeInput.value);
+        const rangeEndTime = this.parseTimeString(this.endTimeInput.value);
+        
+        // 验证时间范围
+        const timeValidation = this.validateTimeRange(rangeStartTime, rangeEndTime);
+        if (!timeValidation.valid) {
+            alert(`时间范围无效：\n\n${timeValidation.message}\n\n请调整时间轴区间后重试。`);
+            return;
+        }
+        
+        // 计算将要创建的片段数量
+        const totalDuration = rangeEndTime - rangeStartTime;
+        const segmentCount = Math.floor(totalDuration / intervalSeconds);
+        
+        if (segmentCount === 0) {
+            alert(`时间间隔过长（${intervalSeconds}秒），无法在当前区间内创建片段\n\n当前区间时长: ${this.formatTime(totalDuration)}`);
+            return;
+        }
+        
+        // 二次确认
+        const remainingTime = totalDuration - (segmentCount * intervalSeconds);
+        let confirmMessage = `将在区间 ${this.formatTime(rangeStartTime)} - ${this.formatTime(rangeEndTime)} 内创建 ${segmentCount} 个片段\n\n`;
+        confirmMessage += `每个片段时长: ${this.formatTime(intervalSeconds)}\n`;
+        confirmMessage += `总占用时长: ${this.formatTime(segmentCount * intervalSeconds)}\n`;
+        if (remainingTime > 0) {
+            confirmMessage += `剩余时长: ${this.formatTime(remainingTime)} (将被忽略)\n`;
+        }
+        confirmMessage += `\n确定要按 ${intervalSeconds} 秒间隔批量创建这些片段吗？`;
+        
+        if (!confirm(confirmMessage)) {
+            return;
+        }
+        
+        try {
+            this.showLoading();
+            
+            // 批量创建片段
+            const createdSegments = [];
+            for (let i = 0; i < segmentCount; i++) {
+                const segmentStartTime = rangeStartTime + (i * intervalSeconds);
+                const segmentEndTime = segmentStartTime + intervalSeconds;
+                
+                const newSegment = {
+                    id: 'segment_' + Date.now() + '_' + i,
+                    video_paths: this.currentSample.type === 'single_video' ? [this.currentSample.video_path] : this.currentSample.video_paths,
+                    start_time: segmentStartTime,
+                    end_time: segmentEndTime,
+                    status: '待抉择',
+                    sample_id: this.currentSample.id
+                };
+                
+                // 调用后端API创建片段
+                const response = await fetch('/api/segment/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(newSegment)
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    if (result.success) {
+                        createdSegments.push(newSegment);
+                        console.log(`✅ 预设间隔片段 ${i + 1}/${segmentCount} 已创建:`, newSegment);
+                    } else {
+                        throw new Error(`创建第 ${i + 1} 个片段失败`);
+                    }
+                } else {
+                    throw new Error(`创建第 ${i + 1} 个片段请求失败`);
+                }
+                
+                // 添加小延迟避免过快的请求
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+            
+            // 重新加载片段列表
+            this.loadSampleSegments(this.currentSample.id);
+            
+            alert(`按 ${intervalSeconds} 秒间隔批量创建成功！共创建了 ${createdSegments.length} 个片段`);
+            console.log('✅ 预设间隔批量创建片段完成:', createdSegments);
+            
+        } catch (error) {
+            console.error('Error batch creating segments with interval:', error);
+            alert('批量创建片段失败: ' + error.message);
+        } finally {
+            this.hideLoading();
+        }
+    }
+    
     // 修改片段时间
     async updateSegmentTime() {
         if (!this.currentSegment) {
@@ -1762,10 +2006,17 @@ class VideoAnnotationApp {
         const statusControls = document.getElementById('segmentStatusControls');
         const updateTimeBtn = document.getElementById('updateSegmentTimeBtn');
         const deleteBtn = document.getElementById('deleteSegmentBtn');
+        const commentSection = document.getElementById('segmentCommentSection');
         
         if (statusControls) statusControls.style.display = 'flex';
         if (updateTimeBtn) updateTimeBtn.style.display = 'inline-block';
         if (deleteBtn) deleteBtn.style.display = 'inline-block';
+        
+        // 显示注释区域并更新内容
+        if (commentSection) {
+            commentSection.style.display = 'block';
+            this.updateSegmentCommentTextarea();
+        }
         
         console.log('✅ 片段控制按钮已显示');
     }
@@ -1775,13 +2026,44 @@ class VideoAnnotationApp {
         const statusControls = document.getElementById('segmentStatusControls');
         const updateTimeBtn = document.getElementById('updateSegmentTimeBtn');
         const deleteBtn = document.getElementById('deleteSegmentBtn');
+        const commentSection = document.getElementById('segmentCommentSection');
         
         if (statusControls) statusControls.style.display = 'none';
         if (updateTimeBtn) updateTimeBtn.style.display = 'none';
         if (deleteBtn) deleteBtn.style.display = 'none';
+        if (commentSection) commentSection.style.display = 'none';
         
         console.log('✅ 片段控制按钮已隐藏');
     }
+    
+    // 更新片段注释文本框
+    updateSegmentCommentTextarea() {
+        const commentTextarea = document.getElementById('segmentCommentTextarea');
+        if (!commentTextarea || !this.currentSegment) return;
+        
+        const comment = this.currentSegment.comment || '';
+        commentTextarea.value = comment;
+        
+        // 添加实时保存的事件监听器
+        this.setupCommentTextareaListener();
+    }
+    
+    // 设置注释文本框的事件监听器
+    setupCommentTextareaListener() {
+        const commentTextarea = document.getElementById('segmentCommentTextarea');
+        if (!commentTextarea) return;
+        
+        // 移除之前的事件监听器（避免重复绑定）
+        commentTextarea.removeEventListener('input', this.handleCommentInput);
+        
+        // 添加新的事件监听器
+        this.handleCommentInput = (e) => {
+            this.saveSegmentComment(this.currentSegment.id, e.target.value);
+        };
+        commentTextarea.addEventListener('input', this.handleCommentInput);
+    }
+    
+
     
     async updateSegmentStatus(segmentId, status) {
         try {
@@ -1794,13 +2076,28 @@ class VideoAnnotationApp {
             });
             
             if (response.ok) {
-                // 重新加载片段列表
-                if (this.currentDataset) {
-                    this.loadSegments(this.currentDataset);
+                // 更新本地片段数据，不重新加载列表
+                if (this.currentSegmentList) {
+                    const segment = this.currentSegmentList.find(s => s.id === segmentId);
+                    if (segment) {
+                        segment.status = status;
+                    }
                 }
-                if (this.currentSample) {
-                    this.loadSampleSegments(this.currentSample.id);
+                
+                // 更新当前选中的片段状态
+                if (this.currentSegment && this.currentSegment.id === segmentId) {
+                    this.currentSegment.status = status;
                 }
+                
+                // 更新片段列表显示（不重新排序）
+                if (this.currentSegmentList) {
+                    this.renderSegments(this.currentSegmentList);
+                }
+                
+                // 更新片段操作按钮
+                this.updateSegmentActionButtons();
+                
+                console.log(`✅ 片段 ${segmentId} 状态已更新为: ${status}`);
             } else {
                 throw new Error('Failed to update segment status');
             }
@@ -1981,6 +2278,8 @@ class VideoAnnotationApp {
             this.hideLoading();
         }
     }
+    
+
     
     // 更新样本审阅状态显示
     updateSampleReviewStatus() {
@@ -3684,6 +3983,166 @@ class VideoAnnotationApp {
         this.syncTimelineElements(defaultStartTime, defaultEndTime);
         
         // console.log(`✅ 默认时间轴状态初始化完成: 开始=${this.formatTime(defaultStartTime)}, 结束=${this.formatTime(defaultEndTime)}`);
+    }
+    
+    // ==================== 统计功能 ====================
+    
+    /**
+     * 显示统计信息弹窗
+     */
+    async showStatistics() {
+        try {
+            // 获取统计数据
+            await this.fetchStatistics();
+            
+            // 显示统计弹窗
+            const modal = document.getElementById('statisticsModal');
+            if (modal) {
+                modal.style.display = 'block';
+            } else {
+                console.error('统计弹窗元素未找到');
+                alert('统计弹窗元素未找到');
+            }
+            
+        } catch (error) {
+            console.error('获取统计数据失败:', error);
+            alert('获取统计数据失败，请重试');
+        }
+    }
+    
+    /**
+     * 关闭统计信息弹窗
+     */
+    closeStatistics() {
+        document.getElementById('statisticsModal').style.display = 'none';
+    }
+    
+    /**
+     * 获取统计数据
+     */
+    async fetchStatistics() {
+        try {
+            // 获取当前标注者
+            const currentAnnotator = this.currentAnnotator || 'all';
+            
+            // 获取所有数据集的统计信息
+            const response = await fetch(`/api/statistics?annotator=${currentAnnotator}`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            this.statisticsData = await response.json();
+            this.updateStatisticsDisplay();
+            
+        } catch (error) {
+            console.error('获取统计数据失败:', error);
+            throw error;
+        }
+    }
+    
+    /**
+     * 更新统计显示
+     */
+    updateStatisticsDisplay() {
+        if (!this.statisticsData) {
+            return;
+        }
+        
+        // 更新数据集统计
+        this.updateDatasetStats();
+        
+        // 更新片段长度+状态统计
+        this.updateSegmentLengthStatusStats();
+    }
+    
+    /**
+     * 更新数据集统计
+     */
+    updateDatasetStats() {
+        const datasetStatsContainer = document.getElementById('datasetStats');
+        if (!datasetStatsContainer || !this.statisticsData.datasets) return;
+        
+        let html = '';
+        for (const [datasetName, stats] of Object.entries(this.statisticsData.datasets)) {
+            html += `
+                <div class="dataset-stat-item">
+                    <h4>${datasetName}</h4>
+                    <div class="dataset-stat-row">
+                        <span class="dataset-stat-label">已审阅:</span>
+                        <span class="dataset-stat-value">${stats.reviewed}</span>
+                    </div>
+                    <div class="dataset-stat-row">
+                        <span class="dataset-stat-label">未审阅:</span>
+                        <span class="dataset-stat-value">${stats.unreviewed}</span>
+                    </div>
+                    <div class="dataset-stat-row">
+                        <span class="dataset-stat-label">异常:</span>
+                        <span class="dataset-stat-value">${stats.exception}</span>
+                    </div>
+                </div>
+            `;
+        }
+        
+        datasetStatsContainer.innerHTML = html;
+    }
+    
+    /**
+     * 更新片段长度+状态统计
+     */
+    updateSegmentLengthStatusStats() {
+        if (!this.statisticsData.segments || !this.statisticsData.segments.lengthStatus) return;
+        
+        const lengthStats = this.statisticsData.segments.lengthStatus;
+        
+        // 更新小片段统计
+        document.getElementById('shortSelected').textContent = lengthStats.short.selected || 0;
+        document.getElementById('shortPending').textContent = lengthStats.short.pending || 0;
+        document.getElementById('shortRejected').textContent = lengthStats.short.rejected || 0;
+        
+        // 更新中片段统计
+        document.getElementById('mediumSelected').textContent = lengthStats.medium.selected || 0;
+        document.getElementById('mediumPending').textContent = lengthStats.medium.pending || 0;
+        document.getElementById('mediumRejected').textContent = lengthStats.medium.rejected || 0;
+        
+        // 更新长片段统计
+        document.getElementById('longSelected').textContent = lengthStats.long.selected || 0;
+        document.getElementById('longPending').textContent = lengthStats.long.pending || 0;
+        document.getElementById('longRejected').textContent = lengthStats.long.rejected || 0;
+        
+        // 更新超长片段统计
+        document.getElementById('extraLongSelected').textContent = lengthStats.extraLong.selected || 0;
+        document.getElementById('extraLongPending').textContent = lengthStats.extraLong.pending || 0;
+        document.getElementById('extraLongRejected').textContent = lengthStats.extraLong.rejected || 0;
+        
+        // 更新所有长度片段统计
+        document.getElementById('allSelected').textContent = lengthStats.all.selected || 0;
+        document.getElementById('allPending').textContent = lengthStats.all.pending || 0;
+        document.getElementById('allRejected').textContent = lengthStats.all.rejected || 0;
+    }
+    
+    /**
+     * 刷新片段列表排序
+     */
+    async refreshSegmentOrder() {
+        try {
+            console.log('🔄 开始刷新片段列表排序...');
+            
+            if (this.currentDataset) {
+                // 重新加载数据集片段（会按状态排序）
+                await this.loadSegments(this.currentDataset);
+            }
+            
+            if (this.currentSample) {
+                // 重新加载样本片段（会按状态排序）
+                await this.loadSampleSegments(this.currentSample.id);
+            }
+            
+            console.log('✅ 片段列表排序已刷新');
+            
+        } catch (error) {
+            console.error('刷新片段列表排序失败:', error);
+        }
     }
     
 

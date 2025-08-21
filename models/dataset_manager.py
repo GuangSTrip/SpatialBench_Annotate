@@ -264,7 +264,15 @@ class DatasetManager:
         return samples
     
     def get_segments_for_dataset(self, dataset_id: str) -> List[Dict]:
-        """获取指定数据集的片段列表"""
+        """获取指定数据集的片段列表（不自动排序）"""
+        if dataset_id not in self.segments:
+            return []
+        
+        segments = self.segments[dataset_id].get('segments', [])
+        return segments.copy()  # 返回副本，不修改原数据
+    
+    def get_segments_for_dataset_sorted(self, dataset_id: str) -> List[Dict]:
+        """获取指定数据集的片段列表（按状态排序）"""
         if dataset_id not in self.segments:
             return []
         
@@ -272,9 +280,10 @@ class DatasetManager:
         
         # 按状态排序：待抉择 -> 选用 -> 弃用
         status_order = {'待抉择': 0, '选用': 1, '弃用': 2}
-        segments.sort(key=lambda x: status_order.get(x.get('status', '待抉择'), 0))
+        sorted_segments = segments.copy()
+        sorted_segments.sort(key=lambda x: status_order.get(x.get('status', '待抉择'), 0))
         
-        return segments
+        return sorted_segments
     
     def get_segments_for_sample(self, sample_id: str) -> List[Dict]:
         """获取指定样本的片段列表"""
@@ -330,7 +339,7 @@ class DatasetManager:
             return False
     
     def update_segment(self, segment_id: str, update_data: Dict) -> bool:
-        """更新片段信息（状态、时间等）"""
+        """更新片段信息（状态、时间、注释等）"""
         try:
             for dataset_id, dataset_segments in self.segments.items():
                 for segment in dataset_segments.get('segments', []):
@@ -343,6 +352,9 @@ class DatasetManager:
                             segment['start_time'] = update_data['start_time']
                         if 'end_time' in update_data:
                             segment['end_time'] = update_data['end_time']
+                        # 更新注释
+                        if 'comment' in update_data:
+                            segment['comment'] = update_data['comment']
                         
                         # 保存到文件
                         filepath = os.path.join(self.data_dir, f"{dataset_id}_segments.json")
@@ -437,3 +449,191 @@ class DatasetManager:
         except Exception as e:
             print(f"Error marking sample as unreviewed: {e}")
             return False
+    
+    def mark_sample_exception(self, sample_id: str) -> bool:
+        """标记样本为异常（已弃用，改为自动管理）"""
+        print("Warning: mark_sample_exception is deprecated. Exception status is now managed automatically.")
+        return False
+    
+    def set_sample_exception_status(self, sample_id: str, is_exception: bool, reason: str = "") -> bool:
+        """设置样本的异常状态（独立于审阅状态）"""
+        try:
+            for dataset_id, dataset in self.datasets.items():
+                for sample in dataset.get('samples', []):
+                    if sample.get('id') == sample_id:
+                        # 设置异常状态（独立于审阅状态）
+                        if is_exception:
+                            sample['exception_status'] = {
+                                'is_exception': True,
+                                'reason': reason,
+                                'timestamp': datetime.now().isoformat()
+                            }
+                        else:
+                            # 清除异常状态
+                            if 'exception_status' in sample:
+                                del sample['exception_status']
+                        
+                        # 保存到文件
+                        filepath = os.path.join(self.data_dir, f"{dataset_id}.json")
+                        with open(filepath, 'w', encoding='utf-8') as f:
+                            json.dump(dataset, f, ensure_ascii=False, indent=2)
+                        return True
+            return False
+        except Exception as e:
+            print(f"Error setting sample exception status: {e}")
+            return False
+    
+    def get_sample_exception_status(self, sample_id: str) -> Optional[Dict]:
+        """获取样本的异常状态"""
+        try:
+            for dataset_id, dataset in self.datasets.items():
+                for sample in dataset.get('samples', []):
+                    if sample.get('id') == sample_id:
+                        return sample.get('exception_status')
+            return None
+        except Exception as e:
+            print(f"Error getting sample exception status: {e}")
+            return None
+    
+    def get_statistics(self, annotator: str = 'all') -> Dict:
+        """获取标注统计信息"""
+        try:
+            statistics = {
+                'datasets': {},
+                'segments': {},
+                'totalSelected': 0
+            }
+            
+            # 统计数据集级别的信息
+            for dataset_id, dataset in self.datasets.items():
+                # 忽略test_dataset
+                if dataset_id == 'test_dataset':
+                    continue
+                    
+                samples = dataset.get('samples', [])
+                
+                # 过滤指定标注者的样本
+                if annotator and annotator != 'all':
+                    samples = [s for s in samples if s.get('assigned_to') == annotator]
+                
+                # 统计审阅状态
+                reviewed = len([s for s in samples if s.get('review_status') == '已审阅'])
+                unreviewed = len([s for s in samples if s.get('review_status') == '未审阅'])
+                
+                # 统计异常状态
+                exception = len([s for s in samples if s.get('exception_status', {}).get('is_exception', False)])
+                
+                statistics['datasets'][dataset_id] = {
+                    'reviewed': reviewed,
+                    'unreviewed': unreviewed,
+                    'exception': exception
+                }
+            
+            # 统计片段级别的信息
+            all_segments = []
+            for dataset_id, dataset_segments in self.segments.items():
+                # 忽略test_dataset的片段
+                if dataset_id == 'test_dataset':
+                    continue
+                    
+                segments = dataset_segments.get('segments', [])
+                
+                # 过滤指定标注者的片段（通过sample_id关联）
+                if annotator and annotator != 'all':
+                    filtered_segments = []
+                    for segment in segments:
+                        sample_id = segment.get('sample_id')
+                        # 查找对应的样本
+                        for dataset in self.datasets.values():
+                            # 忽略test_dataset
+                            if dataset.get('id') == 'test_dataset':
+                                continue
+                            for sample in dataset.get('samples', []):
+                                if sample.get('id') == sample_id and sample.get('assigned_to') == annotator:
+                                    filtered_segments.append(segment)
+                                    break
+                    segments = filtered_segments
+                
+                all_segments.extend(segments)
+            
+            # 统计片段状态
+            selected = len([s for s in all_segments if s.get('status') == '选用'])
+            pending = len([s for s in all_segments if s.get('status') == '待抉择'])
+            rejected = len([s for s in all_segments if s.get('status') == '弃用'])
+            
+            statistics['segments'] = {
+                'selected': selected,
+                'pending': pending,
+                'rejected': rejected
+            }
+            
+            # 按长度和状态统计片段
+            length_status_stats = {
+                'short': {'selected': 0, 'pending': 0, 'rejected': 0},      # ≤5秒
+                'medium': {'selected': 0, 'pending': 0, 'rejected': 0},     # 5-13秒
+                'long': {'selected': 0, 'pending': 0, 'rejected': 0},       # 13-30秒
+                'extraLong': {'selected': 0, 'pending': 0, 'rejected': 0},  # >30秒
+                'all': {'selected': 0, 'pending': 0, 'rejected': 0}         # 所有长度
+            }
+            
+            for segment in all_segments:
+                start_time = segment.get('start_time', 0)
+                end_time = segment.get('end_time', 0)
+                duration = end_time - start_time
+                status = segment.get('status', '待抉择')
+                
+                # 更新所有长度的统计
+                if status == '选用':
+                    length_status_stats['all']['selected'] += 1
+                elif status == '待抉择':
+                    length_status_stats['all']['pending'] += 1
+                elif status == '弃用':
+                    length_status_stats['all']['rejected'] += 1
+                
+                # 按长度分类统计
+                if duration <= 5:
+                    if status == '选用':
+                        length_status_stats['short']['selected'] += 1
+                    elif status == '待抉择':
+                        length_status_stats['short']['pending'] += 1
+                    elif status == '弃用':
+                        length_status_stats['short']['rejected'] += 1
+                elif duration < 13:
+                    if status == '选用':
+                        length_status_stats['medium']['selected'] += 1
+                    elif status == '待抉择':
+                        length_status_stats['medium']['pending'] += 1
+                    elif status == '弃用':
+                        length_status_stats['medium']['rejected'] += 1
+                elif duration < 30:
+                    if status == '选用':
+                        length_status_stats['long']['selected'] += 1
+                    elif status == '待抉择':
+                        length_status_stats['long']['pending'] += 1
+                    elif status == '弃用':
+                        length_status_stats['long']['rejected'] += 1
+                else:
+                    if status == '选用':
+                        length_status_stats['extraLong']['selected'] += 1
+                    elif status == '待抉择':
+                        length_status_stats['extraLong']['pending'] += 1
+                    elif status == '弃用':
+                        length_status_stats['extraLong']['rejected'] += 1
+            
+            # 更新统计信息
+            statistics['segments'].update({
+                'lengthStatus': length_status_stats
+            })
+            
+            # 总选用片段数
+            statistics['totalSelected'] = length_status_stats['all']['selected']
+            
+            return statistics
+            
+        except Exception as e:
+            print(f"Error getting statistics: {e}")
+            return {
+                'datasets': {},
+                'segments': {},
+                'totalSelected': 0
+            }

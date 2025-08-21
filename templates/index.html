@@ -15,6 +15,10 @@
                 <i class="fas fa-video"></i>
                 Spatial Predict Benchmark Annotation
             </h1>
+            <button class="btn btn-outline-light btn-sm statistics-btn" onclick="app.showStatistics()">
+                <i class="fas fa-chart-bar"></i>
+                统计
+            </button>
             <div class="header-info">
                 <span class="year">2025</span>
                 <span class="producer">Produced by zhaoyanguang</span>
@@ -51,6 +55,128 @@
         </div>
     </div>
 
+    <!-- 统计信息模态框 -->
+    <div id="statisticsModal" class="modal">
+        <div class="modal-content statistics-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-chart-bar"></i> 标注统计信息</h2>
+                <button class="close-btn" onclick="app.closeStatistics()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="statistics-content">
+                    <!-- 数据集统计 -->
+                    <div class="stat-section">
+                        <h3><i class="fas fa-database"></i> 数据集统计</h3>
+                        <div id="datasetStats" class="stats-grid">
+                            <!-- 数据集统计将通过JavaScript动态加载 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 片段长度+状态统计 -->
+                    <div class="stat-section">
+                        <h3><i class="fas fa-ruler"></i> 片段长度+状态统计</h3>
+                        
+                        <!-- 小片段统计 -->
+                                   <div class="length-status-section">
+               <h4 class="length-title">小片段 (≤5秒)</h4>
+               <div class="status-row">
+                   <div class="status-item">
+                       <span class="status-label">选用:</span>
+                       <span class="status-value" id="shortSelected">0</span>
+                   </div>
+                   <div class="status-item">
+                       <span class="status-label">待抉择:</span>
+                       <span class="status-value" id="shortPending">0</span>
+                   </div>
+                   <div class="status-item">
+                       <span class="status-label">弃用:</span>
+                       <span class="status-value" id="shortRejected">0</span>
+                   </div>
+               </div>
+           </div>
+                        
+                        <!-- 中片段统计 -->
+                        <div class="length-status-section">
+                            <h4 class="length-title">中片段 (5-13秒)</h4>
+                            <div class="status-row">
+                                <div class="status-item">
+                                    <span class="status-label">选用:</span>
+                                    <span class="status-value" id="mediumSelected">0</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">待抉择:</span>
+                                    <span class="status-value" id="mediumPending">0</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">弃用:</span>
+                                    <span class="status-value" id="mediumRejected">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 长片段统计 -->
+                        <div class="length-status-section">
+                            <h4 class="length-title">长片段 (13-30秒)</h4>
+                            <div class="status-row">
+                                <div class="status-item">
+                                    <span class="status-label">选用:</span>
+                                    <span class="status-value" id="longSelected">0</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">待抉择:</span>
+                                    <span class="status-value" id="longPending">0</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">弃用:</span>
+                                    <span class="status-value" id="longRejected">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 超长片段统计 -->
+                        <div class="length-status-section">
+                            <h4 class="length-title">超长片段 (>30秒)</h4>
+                            <div class="status-row">
+                                <div class="status-item">
+                                    <span class="status-label">选用:</span>
+                                    <span class="status-value" id="extraLongSelected">0</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">待抉择:</span>
+                                    <span class="status-value" id="extraLongPending">0</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">弃用:</span>
+                                    <span class="status-value" id="extraLongRejected">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 总统计 -->
+                        <div class="length-status-section total-length-section">
+                            <h4 class="length-title">总统计</h4>
+                            <div class="status-row">
+                                <div class="status-item">
+                                    <span class="status-label">选用:</span>
+                                    <span class="status-value" id="allSelected">0</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">待抉择:</span>
+                                    <span class="status-value" id="allPending">0</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">弃用:</span>
+                                    <span class="status-value" id="allRejected">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 主内容区域 -->
     <main class="main-content">
         <!-- 左侧：数据集和样本列表 -->
@@ -76,10 +202,16 @@
         <div class="center-panel">
             <div class="panel-header">
                 <h3>片段列表</h3>
-                <button id="removeRejectedBtn" class="btn btn-danger" style="display: none;">
-                    <i class="fas fa-trash"></i>
-                    删除弃用片段
-                </button>
+                <div class="segment-controls">
+                    <button id="refreshSegmentOrderBtn" class="btn btn-outline-primary btn-sm" onclick="app.refreshSegmentOrder()">
+                        <i class="fas fa-sort"></i>
+                        刷新排序
+                    </button>
+                    <button id="removeRejectedBtn" class="btn btn-danger btn-sm" style="display: none;">
+                        <i class="fas fa-trash"></i>
+                        删除弃用片段
+                    </button>
+                </div>
             </div>
             
             <div class="segment-list" id="segmentList">
@@ -108,6 +240,19 @@
                     <label for="endTimeInput">结束时间:</label>
                     <input type="text" id="endTimeInput" class="time-input" value="00:00" placeholder="MM:SS">
                 </div>
+                    </div>
+                    
+                    <!-- 片段注释区域 -->
+                    <div class="segment-comment-section" id="segmentCommentSection" style="display: none;">
+                        <div class="comment-header">
+                            <span class="control-label">片段注释:</span>
+                        </div>
+                        <div class="comment-input-container">
+                            <textarea class="segment-comment-textarea" 
+                                      id="segmentCommentTextarea" 
+                                      placeholder="在这里输入片段注释..." 
+                                      rows="4"></textarea>
+                        </div>
                     </div>
                     
                     <div class="timeline-container">
@@ -172,6 +317,8 @@
                             </button>
                         </div>
                         
+
+                        
                                             <div class="segment-action-controls">
                         <button class="btn btn-sm btn-info" onclick="app.createNewSegment()">
                             <i class="fas fa-plus"></i>
@@ -181,6 +328,8 @@
                             <i class="fas fa-layer-group"></i>
                             批量创建片段
                         </button>
+                        
+
                         <button class="btn btn-sm btn-primary" id="updateSegmentTimeBtn" onclick="app.updateSegmentTime()" style="display: none;">
                             <i class="fas fa-clock"></i>
                             修改片段时间
@@ -197,6 +346,29 @@
                             <i class="fas fa-undo"></i>
                             设置为未审阅
                         </button>
+                        <div class="exception-status-display" id="exceptionStatusDisplay" style="display: none;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span class="exception-reason" id="exceptionReason"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- 预设时间间隔批量创建按钮 - 新的一行 -->
+                    <div class="preset-batch-row">
+                        <div class="preset-batch-label">快速批量创建:</div>
+                        <div class="preset-batch-buttons">
+                            <button class="btn btn-sm btn-outline-info" onclick="app.batchCreateSegmentsWithInterval(5)">
+                                <i class="fas fa-clock"></i>
+                                5秒间隔
+                            </button>
+                            <button class="btn btn-sm btn-outline-info" onclick="app.batchCreateSegmentsWithInterval(13)">
+                                <i class="fas fa-clock"></i>
+                                13秒间隔
+                            </button>
+                            <button class="btn btn-sm btn-outline-info" onclick="app.batchCreateSegmentsWithInterval(30)">
+                                <i class="fas fa-clock"></i>
+                                30秒间隔
+                            </button>
+                        </div>
                     </div>
 
                 </div>

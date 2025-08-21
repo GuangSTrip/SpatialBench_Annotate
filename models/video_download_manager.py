@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 class VideoDownloadManager:
     """视频下载管理器，处理YouTube和HuggingFace视频下载"""
     
-    def __init__(self, base_video_dir: str = None):
+    def __init__(self, base_video_dir: str = None, dataset_manager=None):
         # 如果没有指定，使用项目根目录下的static/videos
         if base_video_dir is None:
             # 获取当前文件所在目录的上级目录（项目根目录）
@@ -26,6 +26,9 @@ class VideoDownloadManager:
             
         self.hf_repo = "GuangsTrip/spatialpredictsource"
         self.hf_repo_type = "dataset"  # 明确指定为数据集仓库
+        
+        # 数据集管理器引用，用于管理异常状态
+        self.dataset_manager = dataset_manager
         
         # 确保基础目录存在
         os.makedirs(self.base_video_dir, exist_ok=True)
@@ -148,6 +151,16 @@ class VideoDownloadManager:
                     
                     if validation_result["valid"]:
                         logger.info(f"YouTube视频下载成功: {target_path}, 大小: {self.format_file_size(file_size)}")
+                        
+                        # 下载成功时清除异常状态
+                        if self.dataset_manager:
+                            try:
+                                sample_id = sample_name
+                                self.dataset_manager.set_sample_exception_status(sample_id, False)
+                                logger.info(f"已清除样本 {sample_id} 的异常状态")
+                            except Exception as status_error:
+                                logger.error(f"清除异常状态失败: {status_error}")
+                        
                         return {
                             "success": True,
                             "message": "YouTube视频下载成功",
@@ -186,6 +199,20 @@ class VideoDownloadManager:
                     logger.info(f"已清理部分下载文件: {target_path}")
                 except:
                     pass
+            
+            # 自动设置异常状态
+            if self.dataset_manager:
+                try:
+                    # 从sample_name中提取sample_id（假设sample_name就是sample_id）
+                    sample_id = sample_name
+                    self.dataset_manager.set_sample_exception_status(
+                        sample_id, 
+                        True, 
+                        f"YouTube下载失败: {str(e)}"
+                    )
+                    logger.info(f"已自动设置样本 {sample_id} 为异常状态")
+                except Exception as status_error:
+                    logger.error(f"设置异常状态失败: {status_error}")
             
             return {
                 "success": False,

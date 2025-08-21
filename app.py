@@ -13,7 +13,7 @@ CORS(app)
 # 初始化管理器
 dataset_manager = DatasetManager()
 annotation_manager = AnnotationManager()
-video_download_manager = VideoDownloadManager()
+video_download_manager = VideoDownloadManager(dataset_manager=dataset_manager)
 
 @app.route('/')
 def index():
@@ -72,6 +72,14 @@ def update_segment(segment_id):
     """更新片段状态和时间"""
     data = request.json
     success = dataset_manager.update_segment(segment_id, data)
+    return jsonify({'success': success})
+
+@app.route('/api/segment/<segment_id>/comment', methods=['POST'])
+def update_segment_comment(segment_id):
+    """更新片段注释"""
+    data = request.json
+    comment = data.get('comment', '')
+    success = dataset_manager.update_segment(segment_id, {'comment': comment})
     return jsonify({'success': success})
 
 @app.route('/api/segment/create', methods=['POST'])
@@ -199,6 +207,31 @@ def mark_sample_unreviewed(sample_id):
         return jsonify({'success': success})
     except Exception as e:
         return jsonify({'error': f'设置样本失败: {str(e)}'}), 500
+
+@app.route('/api/sample/<sample_id>/exception_status', methods=['GET'])
+def get_sample_exception_status(sample_id):
+    """获取样本的异常状态"""
+    try:
+        exception_status = dataset_manager.get_sample_exception_status(sample_id)
+        return jsonify({'exception_status': exception_status})
+    except Exception as e:
+        return jsonify({'error': f'获取异常状态失败: {str(e)}'}), 500
+
+@app.route('/api/statistics', methods=['GET'])
+def get_statistics():
+    """获取标注统计信息"""
+    try:
+        # 获取当前标注者（从请求参数或session中获取）
+        current_annotator = request.args.get('annotator', 'all')
+        
+        # 获取统计数据
+        statistics = dataset_manager.get_statistics(current_annotator)
+        return jsonify(statistics)
+        
+    except Exception as e:
+        return jsonify({'error': f'获取统计数据失败: {str(e)}'}), 500
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
