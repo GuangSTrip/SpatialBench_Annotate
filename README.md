@@ -20,6 +20,7 @@ pip install -r requirements.txt
 ```bash
 mv egoexo4d.json data/egoexo4d.json
 mv test_dataset.json data/test_dataset.json
+mv youtube1.json data/youtube1.json
 ```
 
 ## Login Huggingface
