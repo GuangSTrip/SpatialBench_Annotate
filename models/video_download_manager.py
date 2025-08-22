@@ -208,7 +208,7 @@ class VideoDownloadManager:
                     self.dataset_manager.set_sample_exception_status(
                         sample_id, 
                         True, 
-                        f"YouTube下载失败: {str(e)}"
+                        "下载异常，请稍后再试"
                     )
                     logger.info(f"已自动设置样本 {sample_id} 为异常状态")
                 except Exception as status_error:

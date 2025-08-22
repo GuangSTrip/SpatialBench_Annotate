@@ -1,0 +1,910 @@
+{
+  "id": "hd-epic",
+  "name": "hd-epic数据集",
+  "description": "cooking第一视角",
+  "created_at": "2025-08-22T16:06:42.207116",
+  "samples": [
+    {
+      "id": "P01-01",
+      "name": "P01-01",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207116",
+      "video_path": "/static/videos/hd-epic/P01-01/P01-01.mp4"
+    },
+    {
+      "id": "P01-02",
+      "name": "P01-02",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207117",
+      "video_path": "/static/videos/hd-epic/P01-02/P01-02.mp4"
+    },
+    {
+      "id": "P01-03",
+      "name": "P01-03",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207118",
+      "video_path": "/static/videos/hd-epic/P01-03/P01-03.mp4"
+    },
+    {
+      "id": "P01-04",
+      "name": "P01-04",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207119",
+      "video_path": "/static/videos/hd-epic/P01-04/P01-04.mp4"
+    },
+    {
+      "id": "P01-05",
+      "name": "P01-05",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207120",
+      "video_path": "/static/videos/hd-epic/P01-05/P01-05.mp4"
+    },
+    {
+      "id": "P01-06",
+      "name": "P01-06",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207121",
+      "video_path": "/static/videos/hd-epic/P01-06/P01-06.mp4"
+    },
+    {
+      "id": "P01-07",
+      "name": "P01-07",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207122",
+      "video_path": "/static/videos/hd-epic/P01-07/P01-07.mp4"
+    },
+    {
+      "id": "P01-08",
+      "name": "P01-08",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207123",
+      "video_path": "/static/videos/hd-epic/P01-08/P01-08.mp4"
+    },
+    {
+      "id": "P01-09",
+      "name": "P01-09",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207124",
+      "video_path": "/static/videos/hd-epic/P01-09/P01-09.mp4"
+    },
+    {
+      "id": "P01-10",
+      "name": "P01-10",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207125",
+      "video_path": "/static/videos/hd-epic/P01-10/P01-10.mp4"
+    },
+    {
+      "id": "P01-11",
+      "name": "P01-11",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207126",
+      "video_path": "/static/videos/hd-epic/P01-11/P01-11.mp4"
+    },
+    {
+      "id": "P02-01",
+      "name": "P02-01",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207127",
+      "video_path": "/static/videos/hd-epic/P02-01/P02-01.mp4"
+    },
+    {
+      "id": "P02-02",
+      "name": "P02-02",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207128",
+      "video_path": "/static/videos/hd-epic/P02-02/P02-02.mp4"
+    },
+    {
+      "id": "P02-03",
+      "name": "P02-03",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207129",
+      "video_path": "/static/videos/hd-epic/P02-03/P02-03.mp4"
+    },
+    {
+      "id": "P02-04",
+      "name": "P02-04",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207130",
+      "video_path": "/static/videos/hd-epic/P02-04/P02-04.mp4"
+    },
+    {
+      "id": "P02-05",
+      "name": "P02-05",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207131",
+      "video_path": "/static/videos/hd-epic/P02-05/P02-05.mp4"
+    },
+    {
+      "id": "P02-06",
+      "name": "P02-06",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207132",
+      "video_path": "/static/videos/hd-epic/P02-06/P02-06.mp4"
+    },
+    {
+      "id": "P02-07",
+      "name": "P02-07",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207133",
+      "video_path": "/static/videos/hd-epic/P02-07/P02-07.mp4"
+    },
+    {
+      "id": "P02-08",
+      "name": "P02-08",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207134",
+      "video_path": "/static/videos/hd-epic/P02-08/P02-08.mp4"
+    },
+    {
+      "id": "P02-09",
+      "name": "P02-09",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207135",
+      "video_path": "/static/videos/hd-epic/P02-09/P02-09.mp4"
+    },
+    {
+      "id": "P02-10",
+      "name": "P02-10",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207136",
+      "video_path": "/static/videos/hd-epic/P02-10/P02-10.mp4"
+    },
+    {
+      "id": "P02-11",
+      "name": "P02-11",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207137",
+      "video_path": "/static/videos/hd-epic/P02-11/P02-11.mp4"
+    },
+    {
+      "id": "P03-01",
+      "name": "P03-01",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207138",
+      "video_path": "/static/videos/hd-epic/P03-01/P03-01.mp4"
+    },
+    {
+      "id": "P03-02",
+      "name": "P03-02",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207139",
+      "video_path": "/static/videos/hd-epic/P03-02/P03-02.mp4"
+    },
+    {
+      "id": "P03-03",
+      "name": "P03-03",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207140",
+      "video_path": "/static/videos/hd-epic/P03-03/P03-03.mp4"
+    },
+    {
+      "id": "P03-04",
+      "name": "P03-04",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207141",
+      "video_path": "/static/videos/hd-epic/P03-04/P03-04.mp4"
+    },
+    {
+      "id": "P03-05",
+      "name": "P03-05",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207142",
+      "video_path": "/static/videos/hd-epic/P03-05/P03-05.mp4"
+    },
+    {
+      "id": "P03-06",
+      "name": "P03-06",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207143",
+      "video_path": "/static/videos/hd-epic/P03-06/P03-06.mp4"
+    },
+    {
+      "id": "P03-07",
+      "name": "P03-07",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207144",
+      "video_path": "/static/videos/hd-epic/P03-07/P03-07.mp4"
+    },
+    {
+      "id": "P03-08",
+      "name": "P03-08",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207145",
+      "video_path": "/static/videos/hd-epic/P03-08/P03-08.mp4"
+    },
+    {
+      "id": "P03-09",
+      "name": "P03-09",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207146",
+      "video_path": "/static/videos/hd-epic/P03-09/P03-09.mp4"
+    },
+    {
+      "id": "P03-10",
+      "name": "P03-10",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207147",
+      "video_path": "/static/videos/hd-epic/P03-10/P03-10.mp4"
+    },
+    {
+      "id": "P03-11",
+      "name": "P03-11",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207148",
+      "video_path": "/static/videos/hd-epic/P03-11/P03-11.mp4"
+    },
+    {
+      "id": "P04-01",
+      "name": "P04-01",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207149",
+      "video_path": "/static/videos/hd-epic/P04-01/P04-01.mp4"
+    },
+    {
+      "id": "P04-02",
+      "name": "P04-02",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207150",
+      "video_path": "/static/videos/hd-epic/P04-02/P04-02.mp4"
+    },
+    {
+      "id": "P04-03",
+      "name": "P04-03",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207151",
+      "video_path": "/static/videos/hd-epic/P04-03/P04-03.mp4"
+    },
+    {
+      "id": "P04-04",
+      "name": "P04-04",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207152",
+      "video_path": "/static/videos/hd-epic/P04-04/P04-04.mp4"
+    },
+    {
+      "id": "P04-05",
+      "name": "P04-05",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207153",
+      "video_path": "/static/videos/hd-epic/P04-05/P04-05.mp4"
+    },
+    {
+      "id": "P04-06",
+      "name": "P04-06",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207154",
+      "video_path": "/static/videos/hd-epic/P04-06/P04-06.mp4"
+    },
+    {
+      "id": "P04-07",
+      "name": "P04-07",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207155",
+      "video_path": "/static/videos/hd-epic/P04-07/P04-07.mp4"
+    },
+    {
+      "id": "P04-08",
+      "name": "P04-08",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207156",
+      "video_path": "/static/videos/hd-epic/P04-08/P04-08.mp4"
+    },
+    {
+      "id": "P04-09",
+      "name": "P04-09",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207157",
+      "video_path": "/static/videos/hd-epic/P04-09/P04-09.mp4"
+    },
+    {
+      "id": "P04-10",
+      "name": "P04-10",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207158",
+      "video_path": "/static/videos/hd-epic/P04-10/P04-10.mp4"
+    },
+    {
+      "id": "P04-11",
+      "name": "P04-11",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207159",
+      "video_path": "/static/videos/hd-epic/P04-11/P04-11.mp4"
+    },
+    {
+      "id": "P05-01",
+      "name": "P05-01",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207160",
+      "video_path": "/static/videos/hd-epic/P05-01/P05-01.mp4"
+    },
+    {
+      "id": "P05-02",
+      "name": "P05-02",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207161",
+      "video_path": "/static/videos/hd-epic/P05-02/P05-02.mp4"
+    },
+    {
+      "id": "P05-03",
+      "name": "P05-03",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207162",
+      "video_path": "/static/videos/hd-epic/P05-03/P05-03.mp4"
+    },
+    {
+      "id": "P05-04",
+      "name": "P05-04",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207163",
+      "video_path": "/static/videos/hd-epic/P05-04/P05-04.mp4"
+    },
+    {
+      "id": "P05-05",
+      "name": "P05-05",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207164",
+      "video_path": "/static/videos/hd-epic/P05-05/P05-05.mp4"
+    },
+    {
+      "id": "P05-06",
+      "name": "P05-06",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207165",
+      "video_path": "/static/videos/hd-epic/P05-06/P05-06.mp4"
+    },
+    {
+      "id": "P05-07",
+      "name": "P05-07",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207166",
+      "video_path": "/static/videos/hd-epic/P05-07/P05-07.mp4"
+    },
+    {
+      "id": "P05-08",
+      "name": "P05-08",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207167",
+      "video_path": "/static/videos/hd-epic/P05-08/P05-08.mp4"
+    },
+    {
+      "id": "P05-09",
+      "name": "P05-09",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207168",
+      "video_path": "/static/videos/hd-epic/P05-09/P05-09.mp4"
+    },
+    {
+      "id": "P05-10",
+      "name": "P05-10",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207169",
+      "video_path": "/static/videos/hd-epic/P05-10/P05-10.mp4"
+    },
+    {
+      "id": "P05-11",
+      "name": "P05-11",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207170",
+      "video_path": "/static/videos/hd-epic/P05-11/P05-11.mp4"
+    },
+    {
+      "id": "P06-01",
+      "name": "P06-01",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207171",
+      "video_path": "/static/videos/hd-epic/P06-01/P06-01.mp4"
+    },
+    {
+      "id": "P06-02",
+      "name": "P06-02",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207172",
+      "video_path": "/static/videos/hd-epic/P06-02/P06-02.mp4"
+    },
+    {
+      "id": "P06-03",
+      "name": "P06-03",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207173",
+      "video_path": "/static/videos/hd-epic/P06-03/P06-03.mp4"
+    },
+    {
+      "id": "P06-04",
+      "name": "P06-04",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207174",
+      "video_path": "/static/videos/hd-epic/P06-04/P06-04.mp4"
+    },
+    {
+      "id": "P06-05",
+      "name": "P06-05",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207175",
+      "video_path": "/static/videos/hd-epic/P06-05/P06-05.mp4"
+    },
+    {
+      "id": "P06-06",
+      "name": "P06-06",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207176",
+      "video_path": "/static/videos/hd-epic/P06-06/P06-06.mp4"
+    },
+    {
+      "id": "P06-07",
+      "name": "P06-07",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207177",
+      "video_path": "/static/videos/hd-epic/P06-07/P06-07.mp4"
+    },
+    {
+      "id": "P06-08",
+      "name": "P06-08",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207178",
+      "video_path": "/static/videos/hd-epic/P06-08/P06-08.mp4"
+    },
+    {
+      "id": "P06-09",
+      "name": "P06-09",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207179",
+      "video_path": "/static/videos/hd-epic/P06-09/P06-09.mp4"
+    },
+    {
+      "id": "P06-10",
+      "name": "P06-10",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207180",
+      "video_path": "/static/videos/hd-epic/P06-10/P06-10.mp4"
+    },
+    {
+      "id": "P06-11",
+      "name": "P06-11",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207181",
+      "video_path": "/static/videos/hd-epic/P06-11/P06-11.mp4"
+    },
+    {
+      "id": "P07-01",
+      "name": "P07-01",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207182",
+      "video_path": "/static/videos/hd-epic/P07-01/P07-01.mp4"
+    },
+    {
+      "id": "P07-02",
+      "name": "P07-02",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207183",
+      "video_path": "/static/videos/hd-epic/P07-02/P07-02.mp4"
+    },
+    {
+      "id": "P07-03",
+      "name": "P07-03",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207184",
+      "video_path": "/static/videos/hd-epic/P07-03/P07-03.mp4"
+    },
+    {
+      "id": "P07-04",
+      "name": "P07-04",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207185",
+      "video_path": "/static/videos/hd-epic/P07-04/P07-04.mp4"
+    },
+    {
+      "id": "P07-05",
+      "name": "P07-05",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207186",
+      "video_path": "/static/videos/hd-epic/P07-05/P07-05.mp4"
+    },
+    {
+      "id": "P07-06",
+      "name": "P07-06",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207187",
+      "video_path": "/static/videos/hd-epic/P07-06/P07-06.mp4"
+    },
+    {
+      "id": "P07-07",
+      "name": "P07-07",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207188",
+      "video_path": "/static/videos/hd-epic/P07-07/P07-07.mp4"
+    },
+    {
+      "id": "P07-08",
+      "name": "P07-08",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207189",
+      "video_path": "/static/videos/hd-epic/P07-08/P07-08.mp4"
+    },
+    {
+      "id": "P07-09",
+      "name": "P07-09",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207190",
+      "video_path": "/static/videos/hd-epic/P07-09/P07-09.mp4"
+    },
+    {
+      "id": "P08-01",
+      "name": "P08-01",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207191",
+      "video_path": "/static/videos/hd-epic/P08-01/P08-01.mp4"
+    },
+    {
+      "id": "P08-02",
+      "name": "P08-02",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207192",
+      "video_path": "/static/videos/hd-epic/P08-02/P08-02.mp4"
+    },
+    {
+      "id": "P08-03",
+      "name": "P08-03",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207193",
+      "video_path": "/static/videos/hd-epic/P08-03/P08-03.mp4"
+    },
+    {
+      "id": "P08-04",
+      "name": "P08-04",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207194",
+      "video_path": "/static/videos/hd-epic/P08-04/P08-04.mp4"
+    },
+    {
+      "id": "P08-05",
+      "name": "P08-05",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207195",
+      "video_path": "/static/videos/hd-epic/P08-05/P08-05.mp4"
+    },
+    {
+      "id": "P08-06",
+      "name": "P08-06",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207196",
+      "video_path": "/static/videos/hd-epic/P08-06/P08-06.mp4"
+    },
+    {
+      "id": "P08-07",
+      "name": "P08-07",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207197",
+      "video_path": "/static/videos/hd-epic/P08-07/P08-07.mp4"
+    },
+    {
+      "id": "P08-08",
+      "name": "P08-08",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207198",
+      "video_path": "/static/videos/hd-epic/P08-08/P08-08.mp4"
+    },
+    {
+      "id": "P08-09",
+      "name": "P08-09",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207199",
+      "video_path": "/static/videos/hd-epic/P08-09/P08-09.mp4"
+    },
+    {
+      "id": "P08-10",
+      "name": "P08-10",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207200",
+      "video_path": "/static/videos/hd-epic/P08-10/P08-10.mp4"
+    },
+    {
+      "id": "P08-11",
+      "name": "P08-11",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207201",
+      "video_path": "/static/videos/hd-epic/P08-11/P08-11.mp4"
+    },
+    {
+      "id": "P09-01",
+      "name": "P09-01",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207202",
+      "video_path": "/static/videos/hd-epic/P09-01/P09-01.mp4"
+    },
+    {
+      "id": "P09-02",
+      "name": "P09-02",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207203",
+      "video_path": "/static/videos/hd-epic/P09-02/P09-02.mp4"
+    },
+    {
+      "id": "P09-03",
+      "name": "P09-03",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207204",
+      "video_path": "/static/videos/hd-epic/P09-03/P09-03.mp4"
+    },
+    {
+      "id": "P09-04",
+      "name": "P09-04",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207205",
+      "video_path": "/static/videos/hd-epic/P09-04/P09-04.mp4"
+    },
+    {
+      "id": "P09-05",
+      "name": "P09-05",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207206",
+      "video_path": "/static/videos/hd-epic/P09-05/P09-05.mp4"
+    },
+    {
+      "id": "P09-06",
+      "name": "P09-06",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207207",
+      "video_path": "/static/videos/hd-epic/P09-06/P09-06.mp4"
+    },
+    {
+      "id": "P09-07",
+      "name": "P09-07",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207208",
+      "video_path": "/static/videos/hd-epic/P09-07/P09-07.mp4"
+    },
+    {
+      "id": "P09-08",
+      "name": "P09-08",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207209",
+      "video_path": "/static/videos/hd-epic/P09-08/P09-08.mp4"
+    },
+    {
+      "id": "P09-09",
+      "name": "P09-09",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207210",
+      "video_path": "/static/videos/hd-epic/P09-09/P09-09.mp4"
+    },
+    {
+      "id": "P09-10",
+      "name": "P09-10",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207211",
+      "video_path": "/static/videos/hd-epic/P09-10/P09-10.mp4"
+    },
+    {
+      "id": "P09-11",
+      "name": "P09-11",
+      "type": "single_video",
+      "assigned_to": "annotator_1",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207212",
+      "video_path": "/static/videos/hd-epic/P09-11/P09-11.mp4"
+    },
+    {
+      "id": "P01-12",
+      "name": "P01-12",
+      "type": "single_video",
+      "assigned_to": "annotator_2",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207213",
+      "video_path": "/static/videos/hd-epic/P01-12/P01-12.mp4"
+    },
+    {
+      "id": "P01-13",
+      "name": "P01-13",
+      "type": "single_video",
+      "assigned_to": "annotator_3",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207214",
+      "video_path": "/static/videos/hd-epic/P01-13/P01-13.mp4"
+    },
+    {
+      "id": "P01-14",
+      "name": "P01-14",
+      "type": "single_video",
+      "assigned_to": "annotator_4",
+      "review_status": "未审阅",
+      "created_at": "2025-08-22T16:06:42.207215",
+      "video_path": "/static/videos/hd-epic/P01-14/P01-14.mp4"
+    }
+  ],
+  "sample_count": 100,
+  "assigned_sample_count": 100
+}
