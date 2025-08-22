@@ -18,9 +18,10 @@ pip install -r requirements.txt
 ## Move Dataset JOSN File
 
 ```bash
-mv egoexo4d.json data/egoexo4d.json
-mv test_dataset.json data/test_dataset.json
-mv youtube1.json data/youtube1.json
+cp egoexo4d.json data/egoexo4d.json
+cp test_dataset.json data/test_dataset.json
+cp youtube1.json data/youtube1.json
+cp hd-epic.json data/hd-epic.json
 ```
 
 ## Login Huggingface
