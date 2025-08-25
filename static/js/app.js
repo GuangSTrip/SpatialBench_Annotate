@@ -95,19 +95,29 @@ class VideoAnnotationApp {
         const endTimeInput = document.getElementById('endTimeInput');
         
         if (startTimeInput) {
-            startTimeInput.addEventListener('input', (e) => {
+            // 改为失焦时验证，避免输入过程中中断
+            startTimeInput.addEventListener('blur', (e) => {
                 this.handleTimeInputChange('start', e.target.value);
+            });
+            // 保留输入事件用于实时更新，但不做验证
+            startTimeInput.addEventListener('input', (e) => {
+                this.handleTimeInputChangeWithoutValidation('start', e.target.value);
             });
         }
         
         if (endTimeInput) {
-            endTimeInput.addEventListener('input', (e) => {
+            // 改为失焦时验证，避免输入过程中中断
+            endTimeInput.addEventListener('blur', (e) => {
                 this.handleTimeInputChange('end', e.target.value);
+            });
+            // 保留输入事件用于实时更新，但不做验证
+            endTimeInput.addEventListener('input', (e) => {
+                this.handleTimeInputChangeWithoutValidation('end', e.target.value);
             });
         }
     }
     
-    // 处理时间输入框变化
+    // 处理时间输入框变化（带验证，用于失焦时）
     handleTimeInputChange(type, value) {
         const time = this.parseTimeString(value);
         if (isNaN(time) || time < 0) return;
@@ -137,7 +147,25 @@ class VideoAnnotationApp {
             this.syncTimelineElements(startTime, time);
         }
         
-        console.log(`🕐 时间输入框已更新: ${type} = ${this.formatTime(time)}`);
+        console.log(`🕐 时间输入框已更新并验证: ${type} = ${this.formatTime(time)}`);
+    }
+    
+    // 处理时间输入框变化（无验证，用于输入过程中实时更新）
+    handleTimeInputChangeWithoutValidation(type, value) {
+        const time = this.parseTimeString(value);
+        if (isNaN(time) || time < 0) return;
+        
+        if (type === 'start') {
+            const endTime = this.parseTimeString(this.endTimeInput.value) || 10;
+            // 不验证，不更新输入框，只同步时间轴
+            this.syncTimelineElements(time, endTime, false);
+        } else if (type === 'end') {
+            const startTime = this.parseTimeString(this.startTimeInput.value) || 0;
+            // 不验证，不更新输入框，只同步时间轴
+            this.syncTimelineElements(startTime, time, false);
+        }
+        
+        console.log(`🕐 时间输入框实时更新: ${type} = ${this.formatTime(time)}`);
     }
     
     showAnnotatorModal() {
@@ -3549,15 +3577,15 @@ class VideoAnnotationApp {
             const timelineRect = timeline.getBoundingClientRect();
             let newLeft = startLeft + (deltaX / timelineRect.width) * 100;
             
-            // 边界控制
+            // 边界控制 - 减少最小间距限制，允许更小的区间
             if (currentMarker === startMarker) {
                 // 开始标记不能超过结束标记，且不能小于0
                 const endLeft = parseFloat(endMarker.style.left) || 100;
-                newLeft = Math.max(0, Math.min(endLeft - 2, newLeft));
+                newLeft = Math.max(0, Math.min(endLeft - 0.5, newLeft)); // 从2%减少到0.5%
             } else if (currentMarker === endMarker) {
                 // 结束标记不能小于开始标记，且不能超过100
                 const startLeft = parseFloat(startMarker.style.left) || 0;
-                newLeft = Math.max(startLeft + 2, Math.min(100, newLeft));
+                newLeft = Math.max(startLeft + 0.5, Math.min(100, newLeft)); // 从2%减少到0.5%
             }
             
             currentMarker.style.left = newLeft + '%';
@@ -3624,16 +3652,39 @@ class VideoAnnotationApp {
         }
     }
     
-    // 解析时间字符串 (MM:SS) 为秒数
+    // 解析时间字符串 (MM:SS) 为秒数，支持不完整输入
     parseTimeString(timeStr) {
-        const match = timeStr.match(/^(\d{1,2}):(\d{2})$/);
-        if (match) {
-            const minutes = parseInt(match[1]);
-            const seconds = parseInt(match[2]);
+        // 处理完整格式 MM:SS
+        const fullMatch = timeStr.match(/^(\d{1,2}):(\d{2})$/);
+        if (fullMatch) {
+            const minutes = parseInt(fullMatch[1]);
+            const seconds = parseInt(fullMatch[2]);
             if (seconds < 60) {
                 return minutes * 60 + seconds;
             }
         }
+        
+        // 处理不完整格式，如 "1:", "12:", "12:3" 等
+        const partialMatch = timeStr.match(/^(\d{1,2}):?(\d{0,2})$/);
+        if (partialMatch) {
+            const minutes = parseInt(partialMatch[1]);
+            const seconds = partialMatch[2] ? parseInt(partialMatch[2]) : 0;
+            
+            // 验证分钟和秒数的合理性
+            if (minutes >= 0 && minutes <= 99 && seconds >= 0 && seconds < 60) {
+                return minutes * 60 + seconds;
+            }
+        }
+        
+        // 处理纯数字输入，如 "123" (表示123秒)
+        const numberMatch = timeStr.match(/^(\d+)$/);
+        if (numberMatch) {
+            const totalSeconds = parseInt(numberMatch[1]);
+            if (totalSeconds >= 0 && totalSeconds <= 9999) { // 限制最大9999秒
+                return totalSeconds;
+            }
+        }
+        
         return null;
     }
     
@@ -3732,8 +3783,8 @@ class VideoAnnotationApp {
     }
     
     // 强制同步所有时间相关元素
-    syncTimelineElements(startTime, endTime) {
-        console.log(`🔄 强制同步时间轴元素: 开始=${this.formatTime(startTime)}, 结束=${this.formatTime(endTime)}`);
+    syncTimelineElements(startTime, endTime, updateInputs = true) {
+        console.log(`🔄 强制同步时间轴元素: 开始=${this.formatTime(startTime)}, 结束=${this.formatTime(endTime)}, 更新输入框=${updateInputs}`);
         
         // 确保时间值有效
         if (isNaN(startTime) || isNaN(endTime) || startTime < 0 || endTime < 0) {
@@ -3798,9 +3849,11 @@ class VideoAnnotationApp {
         if (startMarkerTime) startMarkerTime.textContent = this.formatTime(startTime);
         if (endMarkerTime) endMarkerTime.textContent = this.formatTime(endTime);
         
-        // 更新时间输入框
-        if (this.startTimeInput) this.startTimeInput.value = this.formatTime(startTime);
-        if (this.endTimeInput) this.endTimeInput.value = this.formatTime(endTime);
+        // 只在需要时更新时间输入框
+        if (updateInputs) {
+            if (this.startTimeInput) this.startTimeInput.value = this.formatTime(startTime);
+            if (this.endTimeInput) this.endTimeInput.value = this.formatTime(endTime);
+        }
         
         console.log('✅ 时间轴元素同步完成');
     }

@@ -704,7 +704,7 @@ body {
     background-color: #f8f9fa;
     border-radius: 6px;
     border: 1px solid #dee2e6;
-    margin: 20px 12px; /* 左右留出按钮的空间，上下留出时间显示空间 */
+    margin: 20px 8px; /* 减少左右边距，让按钮可以更靠近 */
 }
 
 .timeline-track {
@@ -736,14 +736,15 @@ body {
     transition: all 0.2s ease;
     z-index: 5; /* 确保在时间轴上但在按钮下 */
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+    min-width: 0.5%; /* 确保即使很小的区间也能显示 */
 }
 
 .timeline-marker {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
+    width: 18px; /* 稍微减小按钮尺寸 */
+    height: 18px; /* 稍微减小按钮尺寸 */
     background-color: #007bff;
     border: 2px solid #fff;
     border-radius: 50%;
