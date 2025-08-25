@@ -570,8 +570,8 @@ class DatasetManager:
             # 按长度和状态统计片段
             length_status_stats = {
                 'short': {'selected': 0, 'pending': 0, 'rejected': 0},      # ≤5秒
-                'medium': {'selected': 0, 'pending': 0, 'rejected': 0},     # 5-13秒
-                'long': {'selected': 0, 'pending': 0, 'rejected': 0},       # 13-30秒
+                'medium': {'selected': 0, 'pending': 0, 'rejected': 0},     # (5-13秒]
+                'long': {'selected': 0, 'pending': 0, 'rejected': 0},       # (13-30秒]
                 'extraLong': {'selected': 0, 'pending': 0, 'rejected': 0},  # >30秒
                 'all': {'selected': 0, 'pending': 0, 'rejected': 0}         # 所有长度
             }
@@ -598,14 +598,14 @@ class DatasetManager:
                         length_status_stats['short']['pending'] += 1
                     elif status == '弃用':
                         length_status_stats['short']['rejected'] += 1
-                elif duration < 13:
+                elif duration <= 13:
                     if status == '选用':
                         length_status_stats['medium']['selected'] += 1
                     elif status == '待抉择':
                         length_status_stats['medium']['pending'] += 1
                     elif status == '弃用':
                         length_status_stats['medium']['rejected'] += 1
-                elif duration < 30:
+                elif duration <= 30:
                     if status == '选用':
                         length_status_stats['long']['selected'] += 1
                     elif status == '待抉择':
