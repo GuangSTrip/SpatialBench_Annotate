@@ -975,6 +975,9 @@ class VideoAnnotationApp {
             
             // 更新视频操作按钮状态
             this.updateVideoActionButtons();
+            
+            // 更新样本片段统计信息
+            this.updateSampleSegmentStats();
         }, 100);
     }
     
@@ -991,16 +994,20 @@ class VideoAnnotationApp {
     
     async loadSampleSegments(sampleId) {
         try {
-            // 如果没有选中视频样本，清空片段列表
-            if (!sampleId || !this.currentSample) {
-                this.renderSegments([]);
-                return;
-            }
+                    // 如果没有选中视频样本，清空片段列表
+        if (!sampleId || !this.currentSample) {
+            this.renderSegments([]);
+            this.hideSampleSegmentStats();
+            return;
+        }
             
             const response = await fetch(`/api/sample/${sampleId}/segments`);
             const segments = await response.json();
             
             this.renderSegments(segments);
+            
+            // 更新样本片段统计信息
+            this.updateSampleSegmentStats();
         } catch (error) {
             console.error('Error loading sample segments:', error);
             // 出错时也清空片段列表
@@ -1696,6 +1703,10 @@ class VideoAnnotationApp {
                 if (result.success) {
                     // 重新加载片段列表以确保数据同步
                     this.loadSampleSegments(this.currentSample.id);
+                    
+                    // 更新样本片段统计信息
+                    this.updateSampleSegmentStats();
+                    
                     alert('片段创建成功！');
                     console.log('✅ 新片段已创建并保存:', newSegment);
                 } else {
@@ -1817,6 +1828,9 @@ class VideoAnnotationApp {
             
             // 重新加载片段列表
             this.loadSampleSegments(this.currentSample.id);
+            
+            // 更新样本片段统计信息
+            this.updateSampleSegmentStats();
             
             alert(`批量创建成功！共创建了 ${createdSegments.length} 个片段`);
             console.log('✅ 批量创建片段完成:', createdSegments);
@@ -2076,6 +2090,99 @@ class VideoAnnotationApp {
         this.setupCommentTextareaListener();
     }
     
+    // 更新样本片段统计信息
+    async updateSampleSegmentStats() {
+        if (!this.currentSample) {
+            this.hideSampleSegmentStats();
+            return;
+        }
+        
+        try {
+            // 获取当前样本的片段列表
+            const response = await fetch(`/api/sample/${this.currentSample.id}/segments`);
+            if (response.ok) {
+                const segments = await response.json();
+                
+                // 只统计选用状态的片段
+                const selectedSegments = segments.filter(segment => segment.status === '选用');
+                
+                // 计算各长度区间的片段数量
+                const stats = this.calculateSegmentLengthStats(selectedSegments);
+                
+                // 更新显示
+                this.displaySampleSegmentStats(stats);
+                
+                console.log(`📊 样本 ${this.currentSample.id} 片段统计已更新:`, stats);
+            } else {
+                console.warn('⚠️ 获取样本片段失败，无法更新统计信息');
+                this.hideSampleSegmentStats();
+            }
+        } catch (error) {
+            console.error('❌ 更新样本片段统计失败:', error);
+            this.hideSampleSegmentStats();
+        }
+    }
+    
+    // 计算片段长度统计
+    calculateSegmentLengthStats(segments) {
+        const stats = {
+            total: segments.length,
+            short: 0,      // ≤5秒
+            medium: 0,     // (5-13秒]
+            long: 0,       // (13-30秒]
+            extralong: 0   // >30秒
+        };
+        
+        segments.forEach(segment => {
+            const duration = segment.end_time - segment.start_time;
+            
+            if (duration <= 5) {
+                stats.short++;
+            } else if (duration <= 13) {
+                stats.medium++;
+            } else if (duration <= 30) {
+                stats.long++;
+            } else {
+                stats.extralong++;
+            }
+        });
+        
+        return stats;
+    }
+    
+    // 显示样本片段统计
+    displaySampleSegmentStats(stats) {
+        const statsContainer = document.getElementById('sampleSegmentStats');
+        const countElement = document.getElementById('selectedSegmentsCount');
+        
+        if (statsContainer && countElement) {
+            // 更新总数
+            countElement.textContent = stats.total;
+            
+            // 更新各长度区间的数量
+            const shortBadge = statsContainer.querySelector('.length-badge.short');
+            const mediumBadge = statsContainer.querySelector('.length-badge.medium');
+            const longBadge = statsContainer.querySelector('.length-badge.long');
+            const extralongBadge = statsContainer.querySelector('.length-badge.extralong');
+            
+            if (shortBadge) shortBadge.textContent = `S:${stats.short}`;
+            if (mediumBadge) mediumBadge.textContent = `M:${stats.medium}`;
+            if (longBadge) longBadge.textContent = `L:${stats.long}`;
+            if (extralongBadge) extralongBadge.textContent = `XL:${stats.extralong}`;
+            
+            // 显示统计区域
+            statsContainer.style.display = 'flex';
+        }
+    }
+    
+    // 隐藏样本片段统计
+    hideSampleSegmentStats() {
+        const statsContainer = document.getElementById('sampleSegmentStats');
+        if (statsContainer) {
+            statsContainer.style.display = 'none';
+        }
+    }
+    
     // 设置注释文本框的事件监听器
     setupCommentTextareaListener() {
         const commentTextarea = document.getElementById('segmentCommentTextarea');
@@ -2124,6 +2231,9 @@ class VideoAnnotationApp {
                 
                 // 更新片段操作按钮
                 this.updateSegmentActionButtons();
+                
+                // 更新样本片段统计信息
+                this.updateSampleSegmentStats();
                 
                 console.log(`✅ 片段 ${segmentId} 状态已更新为: ${status}`);
             } else {
@@ -2214,6 +2324,9 @@ class VideoAnnotationApp {
                 
                 // 重置时间轴
                 this.initializeDefaultTimeline();
+                
+                // 更新样本片段统计信息
+                this.updateSampleSegmentStats();
                 
                 alert('片段删除成功');
             } else {

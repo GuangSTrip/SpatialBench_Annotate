@@ -265,6 +265,66 @@ body {
     font-weight: 600;
 }
 
+/* 样本片段统计样式 */
+.sample-segment-stats {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: #495057;
+}
+
+.stats-label {
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.stats-count {
+    background-color: #007bff;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    min-width: 24px;
+    text-align: center;
+}
+
+.stats-breakdown {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.length-badge {
+    padding: 0.2rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    min-width: 32px;
+    text-align: center;
+    cursor: help;
+}
+
+.length-badge.short {
+    background-color: #28a745;
+    color: white;
+}
+
+.length-badge.medium {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.length-badge.long {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.length-badge.extralong {
+    background-color: #dc3545;
+    color: white;
+}
+
 .current-annotator {
     display: flex;
     align-items: center;
@@ -664,6 +724,7 @@ body {
     gap: 1rem;
     margin: 1rem 0;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .time-input-group {
@@ -889,11 +950,11 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    justify-content: center;
-    padding: 1rem;
+    padding: 0.5rem 0.75rem;
     background-color: #f8f9fa;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid #e9ecef;
+    margin-left: auto;
 }
 
 /* 片段注释区域 - 视频下方 */

@@ -223,6 +223,16 @@
         <div class="right-panel">
             <div class="panel-header">
                 <h3>视频播放器</h3>
+                <div class="sample-segment-stats" id="sampleSegmentStats" style="display: none;">
+                    <span class="stats-label">选用片段统计:</span>
+                    <span class="stats-count" id="selectedSegmentsCount">0</span>
+                    <span class="stats-breakdown">
+                        <span class="length-badge short" title="短片段 (≤5秒)">S:0</span>
+                        <span class="length-badge medium" title="中片段 (5-13秒]">M:0</span>
+                        <span class="length-badge long" title="长片段 (13-30秒]">L:0</span>
+                        <span class="length-badge extralong" title="超长片段 (>30秒)">XL:0</span>
+                    </span>
+                </div>
             </div>
             
             <div class="video-container">
@@ -232,14 +242,29 @@
                 
                 <div class="video-controls">
                     <div class="time-controls">
-                                        <div class="time-input-group">
-                    <label for="startTimeInput">开始时间:</label>
-                    <input type="text" id="startTimeInput" class="time-input" value="00:00" placeholder="MM:SS">
-                </div>
-                <div class="time-input-group">
-                    <label for="endTimeInput">结束时间:</label>
-                    <input type="text" id="endTimeInput" class="time-input" value="00:00" placeholder="MM:SS">
-                </div>
+                        <div class="time-input-group">
+                            <label for="startTimeInput">开始时间:</label>
+                            <input type="text" id="startTimeInput" class="time-input" value="00:00" placeholder="MM:SS">
+                        </div>
+                        <div class="time-input-group">
+                            <label for="endTimeInput">结束时间:</label>
+                            <input type="text" id="endTimeInput" class="time-input" value="00:00" placeholder="MM:SS">
+                        </div>
+                        <div class="segment-status-controls" id="segmentStatusControls" style="display: none;">
+                            <span class="control-label">片段状态:</span>
+                            <button class="btn btn-sm btn-success" onclick="app.updateCurrentSegmentStatus('选用')">
+                                <i class="fas fa-check"></i>
+                                选用
+                            </button>
+                            <button class="btn btn-sm btn-warning" onclick="app.updateCurrentSegmentStatus('待抉择')">
+                                <i class="fas fa-question"></i>
+                                待抉择
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="app.updateCurrentSegmentStatus('弃用')">
+                                <i class="fas fa-times"></i>
+                                弃用
+                            </button>
+                        </div>
                     </div>
                     
                     <!-- 片段注释区域 -->
@@ -300,23 +325,6 @@
                             快捷键: ← 上一个 | → 下一个 | 空格 播放/暂停当前位置 | 回车 从开始时间播放片段
                         </small>
                     </div>
-                        
-                        <div class="segment-status-controls" id="segmentStatusControls" style="display: none;">
-                            <span class="control-label">片段状态:</span>
-                            <button class="btn btn-sm btn-success" onclick="app.updateCurrentSegmentStatus('选用')">
-                                <i class="fas fa-check"></i>
-                                选用
-                            </button>
-                            <button class="btn btn-sm btn-warning" onclick="app.updateCurrentSegmentStatus('待抉择')">
-                                <i class="fas fa-question"></i>
-                                待抉择
-                            </button>
-                            <button class="btn btn-sm btn-danger" onclick="app.updateCurrentSegmentStatus('弃用')">
-                                <i class="fas fa-times"></i>
-                                弃用
-                            </button>
-                        </div>
-                        
 
                         
                                             <div class="segment-action-controls">
